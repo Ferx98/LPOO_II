@@ -1,0 +1,19 @@
+﻿<Window x:Class="Vistas.WinWelcome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:control="clr-namespace:Vistas.ControlUsuario"
+        Title="Login" Height="480" Width="545" Background="#FFB3E8E8" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button Style="{StaticResource btnIngresar}" Content="Ingresar" Height="30" HorizontalAlignment="Left" Margin="218,360,0,0" Name="btnIngresar" VerticalAlignment="Top" Width="92" Click="btnIngresar_Click"/>
+        <control:Login x:Name="login" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="-4,21,53,105" Width="474"></control:Login>
+        <Button x:Name="btnSalir" Height="59" Width="79"
+        HorizontalAlignment="Left" Margin="405,21,0,0"
+        VerticalAlignment="Top" Click="btnSalir_Click"
+        AllowDrop="False" ForceCursor="False" Style="{StaticResource btnSalir}">
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Image Source="/Vistas;component/Images/salir.png" Width="50" Height="37" Margin="0,0,0,5"/>
+                <TextBlock Text="Salir" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,254 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--Estilos para Login-->
+    <!--Estilo para textBox del Login-->
+    <Style x:Key="textBoxLogin" TargetType="TextBox">
+        <Setter Property="Background" Value="#B4DAED"></Setter>
+        <Setter Property="FontFamily" Value="Lune"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="BorderBrush" Value="#09B57C" />
+        <Setter Property="BorderThickness" Value="2" />
+    </Style>
+    <!--Estilo para passwordBox del login-->
+    <Style x:Key="passwordLogin" TargetType="PasswordBox">
+        <Setter Property="Background" Value="#B4DAED"></Setter>
+        <Setter Property="FontFamily" Value="Lune"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="BorderBrush" Value="#09B57C" />
+        <Setter Property="BorderThickness" Value="2" />
+    </Style>
+    <!--Estilo para btnIngresar del login-->
+    <Style x:Key="btnIngresar" TargetType="Button">
+        <Setter Property="Background" Value="#519240D8"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="FontSize" Value="13"></Setter>
+        <Setter Property="FontStyle" Value="Normal"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="BorderBrush" Value="#FFE84436"></Setter>
+        <Setter Property="BorderThickness" Value="2"></Setter>
+    </Style>
+    <!--Estilo para btnSalir del login-->
+    <Style x:Key="btnSalir" TargetType="Button">
+        <Setter Property="Background" Value="#FFE2D248"></Setter>
+        <Setter Property="Foreground" Value="#FFC40303"></Setter>
+        <Setter Property="FontFamily" Value="Lune"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="BorderBrush" Value="#FF000000"></Setter>
+    </Style>
+    <!-- Estilos textbox de Alta Docente -->
+    <Style x:Key="textBoxDocente" TargetType="TextBox">
+        <Setter Property="Background" Value="#BEEDE6"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="BorderBrush" Value="#F55656" /> <!-- Color del borde -->
+        <Setter Property="BorderThickness" Value="1.8" /> <!-- Grosor del borde -->
+    </Style>
+    <!-- Estilos para buttons de Alta Docente -->
+    <!--Estilo para btnLimpiar de Docente-->
+    <Style x:Key="btnLimpiarAltaDocente" TargetType="Button">
+        <Setter Property="Background" Value="#FFAECBFA"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="BorderBrush" Value="#B177F2"></Setter>
+        <Setter Property="BorderThickness" Value="2.5"></Setter>
+    </Style>
+    <!--Estilo para btnRegistrar de Docente-->
+    <Style x:Key="btnRegistrarAltaDocente" TargetType="Button">
+        <Setter Property="Background" Value="#FF2D6A6A"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="BorderBrush" Value="#B177F2"></Setter>
+        <Setter Property="BorderThickness" Value="2.5"></Setter>
+    </Style>
+    <!--Estilo para btnAtras de Docente-->
+    <Style x:Key="btnAtrasAltaDocente" TargetType="Button">
+        <Setter Property="Background" Value="#FF63C5CB"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="BorderBrush" Value="#B177F2"></Setter>
+        <Setter Property="BorderThickness" Value="2.5"></Setter>
+    </Style>
+    
+    <!-- Estilo para el botón de registrar de AltaCurso y AltaUsuario-->
+    <Style x:Key="btnRegistrar" TargetType="Button">
+        <Setter Property="Background" Value="#FF2D6A6A"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Padding" Value="6,2"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#FF2D6A6A"/>
+
+        <!-- Plantilla para el botón de registrar de AltaCurso y AltaUsuario-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                  Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="4"
+                  Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              RecognizesAccessKey="True"/>
+                    </Border>
+
+                    <!-- Triggers -->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#63BF76"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="FontSize" Value="16"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#FF1C5A9F"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Estilo para botón de atrás de AltaCurso y AltaUsuario-->
+    <Style x:Key="btnAtras" TargetType="Button">
+        <Setter Property="Background" Value="#FF63C5CB"></Setter>
+        <Setter Property="Foreground" Value="#FFFFEFEF"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="Padding" Value="6,2"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#FF2D6A6A"/>
+
+        <!-- Plantilla para el botón atrás de AltaCurso y AltaUsuario -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                  Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="4"
+                  Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              RecognizesAccessKey="True"/>
+                    </Border>
+
+                    <!-- Triggers -->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#16DBDB"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="FontSize" Value="16"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#C2BC0C"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Estilo para botón de Limpiar de AltaCurso y AltaUsuario -->
+    <Style x:Key="btnLimpiar" TargetType="Button">
+        <Setter Property="Background" Value="#FFAECBFA"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"></Setter>
+        <Setter Property="Padding" Value="6,2"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="#FF2D6A6A"/>
+
+        <!-- Plantilla para el botón Limpiar de AltaCurso y AltaUsuario -->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                  Background="{TemplateBinding Background}"
+                  BorderBrush="{TemplateBinding BorderBrush}"
+                  BorderThickness="{TemplateBinding BorderThickness}"
+                  CornerRadius="4"
+                  Padding="{TemplateBinding Padding}">
+                        <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center"
+                              RecognizesAccessKey="True"/>
+                    </Border>
+
+                    <!-- Triggers -->
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#6BB3E8"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="FontSize" Value="16"/>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="Background" Value="#D4596E"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border" Property="Opacity" Value="0.6"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+    
+    <!--Estilos para validacion de errores en ABM de Alumnos-->
+    <Style x:Key="txtValidacion" TargetType="TextBox">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="BorderBrush" Value="#FFB6B6B6"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Background" Value="White"/>
+        <!-- Cuando hay error de validación -->
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip"
+                        Value="{Binding RelativeSource={RelativeSource Self},
+                                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                <Setter Property="BorderBrush" Value="Red"/>
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="Background" Value="#FFFFE6E6"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- Plantilla de error con un ícono y borde rojo -->
+    <ControlTemplate x:Key="txtErrorAlumnos" x:Shared="False">
+        <DockPanel LastChildFill="True">
+            <Border BorderThickness="2"
+                    BorderBrush="Red"
+                    CornerRadius="3"
+                    DockPanel.Dock="Right"
+                    Margin="0,0,2,0">
+                <TextBlock Text="❌" FontSize="14" Margin="2"/>
+            </Border>
+            <AdornedElementPlaceholder/>
+        </DockPanel>
+    </ControlTemplate>
+
+</ResourceDictionary>

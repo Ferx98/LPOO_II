@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Vistas.ControlUsuario.Login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="480" d:DesignWidth="545">
+    <Grid>
+        <TextBox Style="{StaticResource textBoxLogin}" Height="23" HorizontalAlignment="Left" Margin="253,196,0,0" Name="txtUsuario" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox Style="{StaticResource passwordLogin}" Height="23" HorizontalAlignment="Left" Margin="253,270,0,0" Name="txtContraseña" VerticalAlignment="Top" Width="120"/>
+        <Image Height="94" HorizontalAlignment="Left" Margin="227,12,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="83" Source="/Vistas;component/Images/login.png" />
+        <Label Content="Bienvenido/a!" Height="45" HorizontalAlignment="Left" Margin="207,112,0,0" Name="label3" VerticalAlignment="Top" FontSize="20" FontFamily="Javanese Text" Width="133" Foreground="#FF4C4CDB" />
+        <Image Height="64" HorizontalAlignment="Left" Margin="156,172,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="83" Source="/Vistas;component/Images/nombre-de-usuarioLogin.png" />
+        <Image Height="73" HorizontalAlignment="Left" Margin="156,242,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Width="83" Source="/Vistas;component/Images/contrasenaLogin.png" />
+    </Grid>
+</UserControl>

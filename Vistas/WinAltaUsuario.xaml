@@ -1,0 +1,20 @@
+﻿<Window x:Class="Vistas.WinAltaUsuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Formulario de Usuarios" Height="400" Width="500" Background="#FAF0E6" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="Nombre:" Height="28" Margin="80,143,327,0" Name="label1" VerticalAlignment="Top" FontSize="14" />
+        <Label Content="Contraseña:" Height="28" HorizontalAlignment="Left" Margin="80,177,0,0" Name="label2" VerticalAlignment="Top" Width="79" FontSize="14" />
+        <Label Content="Apellido y Nombre:" Height="28" HorizontalAlignment="Left" Margin="80,211,0,0" Name="label3" VerticalAlignment="Top" Width="133" FontSize="14" />
+        <Label Content="Rol:" Height="28" HorizontalAlignment="Left" Margin="80,245,0,0" Name="label4" VerticalAlignment="Top" Width="54" FontSize="14" />
+        <TextBox Height="22" HorizontalAlignment="Left" Margin="239,149,0,0" Name="txtNombre" VerticalAlignment="Top" Width="181" TextChanged="HabilitarBtnLimpiar"></TextBox>
+        <PasswordBox Height="22" HorizontalAlignment="Left" Margin="239,183,0,0" Name="txtContraseña" VerticalAlignment="Top" Width="181" PasswordChanged="HabilitarBtnLimpiar"></PasswordBox>
+        <TextBox Height="22" HorizontalAlignment="Left" Margin="239,217,0,0" Name="txtApeNom" VerticalAlignment="Top" Width="181" TextChanged="HabilitarBtnLimpiar"></TextBox>
+        <ComboBox Height="23" HorizontalAlignment="Left" Margin="239,250,0,0" Name="cmbRoles" VerticalAlignment="Top" Width="181" SelectionChanged="HabilitarBtnLimpiar"/>
+        <Image Height="73" HorizontalAlignment="Left" Margin="198,12,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Width="83" Source="/Vistas;component/Images/AltaUsuario.png" />
+        <Label Content="Registro de Usuario" Height="41" HorizontalAlignment="Left" Margin="135,91,0,0" Name="label5" VerticalAlignment="Top" Width="211" FontSize="20" FontWeight="Bold" Foreground="#FF2D6A6A" />
+        <Button Style="{StaticResource btnLimpiar}" Content="Limpiar" Height="23" HorizontalAlignment="Left" Margin="333,309,0,0" Name="btnLimpiar" VerticalAlignment="Top" FontSize="14" Width="83" AllowDrop="False" Background="#AECBFA" Foreground="#FFEFEFEF" FontWeight="SemiBold" Click="btnLimpiar_Click"></Button>
+        <Button Style="{StaticResource btnRegistrar}" Content="Registrar" Height="23" HorizontalAlignment="Left" Margin="207,309,0,0" Name="btnRegistrarUsuario" VerticalAlignment="Top" FontSize="14" Width="83" Background="#FF2D6A6A" Foreground="White" FontWeight="SemiBold" Click="btnRegistrarUsuario_Click"></Button>
+        <Button Style="{StaticResource btnAtras}" Content="Atras" Height="23" HorizontalAlignment="Left" Margin="80,309,0,0" Name="btnAtras" VerticalAlignment="Top" FontSize="14" Width="83" Background="#FF63C5CB" Foreground="White" FontWeight="SemiBold" Click="btnAtras_Click"></Button>
+    </Grid>
+</Window>
