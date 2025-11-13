@@ -4,53 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections.ObjectModel;
 
 namespace ClasesBase
 {
     public class TrabajarAlumnos
     {
-        //CON ESTA FUNCIÓN SE CARGA LA GRILLA PARA ELEGIR EL REGISTRO A MODIFICAR
-        public static DataTable list_alumnos()
+        //Método para cargar una coleccion con los alumnos registrados.
+        public static ObservableCollection<Alumno> TraerAlumnos()
         {
+            ObservableCollection<Alumno> listaAlumnos = new ObservableCollection<Alumno>();
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
-
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "SELECT * FROM Alumno";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
-            //EJECUTAMOS LA CONSULTA
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //LLENAMOS LOS DATOS DE LA CONSULTA EN EL DATATABLE
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            return dt;
-        }
-
-        //CON ESTA FUNCIÓN SE CARGAN LOS TEXTBOX PARA REALIZAR LA MODIFICACIÓN CUANDO SE SELECCIONE UN REGISTRO EN LA GRILLA
-        public static Alumno traerAlumnos(int idAlumno) 
-        {
-            Alumno oAlumno = null;
-
-            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM Alumno WHERE alu_ID = @id";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = cnn;
-            cmd.Parameters.AddWithValue("@id", idAlumno);
 
             cnn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
 
-            if (dr.Read()) 
+            while (dr.Read())
             {
-                oAlumno = new Alumno();
+                Alumno oAlumno = new Alumno();
+                oAlumno.Alu_ID = Convert.ToInt32(dr["alu_ID"]);
                 oAlumno.Alu_DNI = dr["alu_DNI"].ToString();
                 oAlumno.Alu_Apellido = dr["alu_Apellido"].ToString();
                 oAlumno.Alu_Nombre = dr["alu_Nombre"].ToString();
                 oAlumno.Alu_Email = dr["alu_Email"].ToString();
+                listaAlumnos.Add(oAlumno);
             }
             dr.Close();
-            return oAlumno;
+            cnn.Close();
+
+            return listaAlumnos;
         }
 
         //ESTA FUNCIÓN CONTROLA DE QUE NO SE REGISTREN DNI DUPLICADOS
@@ -121,24 +107,38 @@ namespace ClasesBase
             return newId;
         }
 
-        //FUNCIÓN PARA REALIZAR LA MODIFICACIÓN DE ALUMNOS
-        public static void modificarAlumno(Alumno oAlumno)
+        // MODIFICAR ALUMNO EXISTENTE
+        public static void updateAlumno(Alumno oAlumno)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
             SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "UPDATE Alumno SET alu_DNI = @dni, alu_Apellido = @apellido, alu_Nombre = @nombre, alu_Email = @correo WHERE alu_ID = @id";
+            cmd.CommandText = "UPDATE Alumno SET alu_DNI=@DNI, alu_Apellido=@apellido, alu_Nombre=@nombre, alu_Email=@email WHERE Alu_ID=@id";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
-            cmd.Parameters.AddWithValue("@dni", oAlumno.Alu_DNI);
+            cmd.Parameters.AddWithValue("@id", oAlumno.Alu_ID);
+            cmd.Parameters.AddWithValue("@DNI", oAlumno.Alu_DNI);
             cmd.Parameters.AddWithValue("@apellido", oAlumno.Alu_Apellido);
             cmd.Parameters.AddWithValue("@nombre", oAlumno.Alu_Nombre);
-            cmd.Parameters.AddWithValue("@correo", oAlumno.Alu_Email);
-            cmd.Parameters.AddWithValue("@id", oAlumno.Alu_ID);
+            cmd.Parameters.AddWithValue("@email", oAlumno.Alu_Email);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
-            cnn.Close();
+        }
+
+        // ELIMINAR ALUMNO
+        public static void deleteAlumno(int id)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "DELETE FROM Alumno WHERE Alu_ID=@id";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
         }
     }
 }

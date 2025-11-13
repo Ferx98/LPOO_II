@@ -39,14 +39,15 @@
                 </MenuItem.Header>
                 <MenuItem Header="Cursos">
                     <MenuItem Header="Estado de cursos" Click="MenuItem_Click_6" />
-                    <MenuItem Header="Alta de cursos" Click="MenuItem_Click_2" />
+                    <MenuItem Header="ABM de Cursos" Click="MenuItem_Click_2" />
                     <MenuItem Header="Lista de Cursos" Click="MenuItem_Click_8" />
                 </MenuItem>
                 <MenuItem Header="Docentes">
-                    <MenuItem Header="Alta de docentes" Click="MenuItem_Click_3" />
+                    <MenuItem Header="ABM de Docentes" Click="MenuItem_Click_3" />
+                    <MenuItem Header="Gestión de Docentes" Click="MenuItem_Click_10" />
                 </MenuItem>
                 <MenuItem Header="Alumnos">
-                    <MenuItem Header="Alta de alumnos" Click="MenuItem_Click_4" />
+                    <MenuItem Header="ABM de Alumnos" Click="MenuItem_Click_4" />
                     <MenuItem Header="Modificar alumnos" Click="MenuItem_Click_7" />
                 </MenuItem>
             </MenuItem>

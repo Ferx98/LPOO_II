@@ -42,5 +42,11 @@ namespace ClasesBase
             get { return doc_Email; }
             set { doc_Email = value; }
         }
+
+        //Para mostrar en el formulario de ABM Cursos
+        public string Doc_NombreCompleto
+        {
+            get { return Doc_Apellido + " " + Doc_Nombre; }
+        }
     }
 }

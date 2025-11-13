@@ -1,0 +1,69 @@
+﻿<Window x:Class="Vistas.WinVistaPreviaUsuarios"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:data="clr-namespace:ClasesBase;assembly=ClasesBase"
+        xmlns:scm="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+        Title="Vista previa de impresión" WindowStartupLocation="CenterScreen" Height="745" Width="969" BorderBrush="#FF242424" Background="#FF87C8DB" Closing="Window_Closing">
+    <Window.Resources>
+        <ObjectDataProvider
+            x:Key="LIST_USERS"
+            ObjectType="{x:Type data:TrabajarUsuario}"
+            MethodName="TraerUsuarios">
+        </ObjectDataProvider>
+        <CollectionViewSource x:Key="VIEW_LIST_USERS" Source="{StaticResource ResourceKey=LIST_USERS}">
+            <CollectionViewSource.SortDescriptions>
+                <scm:SortDescription PropertyName="usu_NombreUsuario" Direction="Ascending"></scm:SortDescription>
+            </CollectionViewSource.SortDescriptions>
+        </CollectionViewSource>
+    </Window.Resources>
+    <StackPanel Height="700">
+        <FlowDocumentReader Width="484" Height="584">
+            <FlowDocument Name="DocUsuarios">
+                <Paragraph Foreground="#072994"  FontSize="18" FontWeight="Bold" TextAlignment="Center" Margin="0,0,0,10">Listado de Usuarios</Paragraph>
+                <BlockUIContainer>
+                    <!-- ScrollViewer manual para manejar el desplazamiento -->
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Height="350">
+                        <ListView ItemsSource="{Binding Source={StaticResource ResourceKey=VIEW_LIST_USERS}}"
+                              Width="450" MinWidth="450" FontFamily="Lune" FontSize="16" Foreground="#FF162EBE" BorderBrush="#FFE81212" Background="#FFDEF2CD">
+                            <ListView.View>
+                                <GridView>
+                                    <!-- 🔹 Estilo de los encabezados -->
+                                    <GridView.ColumnHeaderContainerStyle>
+                                        <Style TargetType="{x:Type GridViewColumnHeader}">
+                                            <Setter Property="Background" Value="#FFBE88F4"/>
+                                            <!-- fondo -->
+                                            <Setter Property="Foreground" Value="White"/>
+                                            <!-- texto -->
+                                            <Setter Property="FontWeight" Value="Bold"/>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                            <Setter Property="Height" Value="28"/>
+                                            <Setter Property="BorderBrush" Value="#FF8A2BE2"/>
+                                            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                                        </Style>
+                                    </GridView.ColumnHeaderContainerStyle>
+                                    <!--Columnas de la lista-->
+                                    <GridViewColumn Width="120" Header="Usuario" 
+                                                DisplayMemberBinding="{Binding Path=Usu_NombreUsuario}" />
+                                    <GridViewColumn Width="200" Header="Apellido y Nombre" 
+                                                DisplayMemberBinding="{Binding Path=Usu_ApellidoNombre}" />
+                                    <GridViewColumn Width="120" Header="Rol" 
+                                                DisplayMemberBinding="{Binding Path=Rol_Descripcion}" />
+                                </GridView>
+                            </ListView.View>
+                        </ListView>
+                    </ScrollViewer>
+                </BlockUIContainer>
+            </FlowDocument>
+        </FlowDocumentReader>
+        <!-- 🔹 Botón de imprimir -->
+        <Button Content="🖨 Imprimir listado"
+            Width="130" Height="40" Margin="0,15,0,0"
+            Style="{StaticResource ResourceKey=btnImpresion}"
+             Name="btnImprimir" Click="btnImprimir_Click" />
+        <Button Content="Atrás"
+            Width="90" Height="40" Margin="-450,15,0,0"
+            Style="{StaticResource ResourceKey=btn_plantilla_atras}"
+            Name="btnAtras" Click="btnAtras_Click">
+        </Button>
+    </StackPanel>
+</Window>

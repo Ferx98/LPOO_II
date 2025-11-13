@@ -45,3 +45,9 @@ C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Pla
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\bin\Debug\ClasesBase.dll
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\bin\Debug\ClasesBase.pdb
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\ClasesBase\bin\Debug\ClasesBase.dll.config
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.pdb

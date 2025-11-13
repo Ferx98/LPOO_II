@@ -62,17 +62,20 @@
     <Compile Include="EstadosDeCursos.xaml.cs">
       <DependentUpon>EstadosDeCursos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinABMAlumnos.xaml.cs">
+      <DependentUpon>WinABMAlumnos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinABMCursos.xaml.cs">
+      <DependentUpon>WinABMCursos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinABMDocentes.xaml.cs">
+      <DependentUpon>WinABMDocentes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinABMUsuarios.xaml.cs">
       <DependentUpon>WinABMUsuarios.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WinAltaAlumno.xaml.cs">
-      <DependentUpon>WinAltaAlumno.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WinAltaCurso.xaml.cs">
-      <DependentUpon>WinAltaCurso.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="WinAltaDocente.xaml.cs">
-      <DependentUpon>WinAltaDocente.xaml</DependentUpon>
+    <Compile Include="WinGestionDocentes.xaml.cs">
+      <DependentUpon>WinGestionDocentes.xaml</DependentUpon>
     </Compile>
     <Compile Include="WinListaCursos.xaml.cs">
       <DependentUpon>WinListaCursos.xaml</DependentUpon>
@@ -80,11 +83,11 @@
     <Compile Include="WinListaUsuarios.xaml.cs">
       <DependentUpon>WinListaUsuarios.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WinModificarAlumno.xaml.cs">
-      <DependentUpon>WinModificarAlumno.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WinPrincipal.xaml.cs">
       <DependentUpon>WinPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinVistaPreviaUsuarios.xaml.cs">
+      <DependentUpon>WinVistaPreviaUsuarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="WinWelcome.xaml.cs">
       <DependentUpon>WinWelcome.xaml</DependentUpon>
@@ -109,19 +112,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WinABMAlumnos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinABMCursos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinABMDocentes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WinABMUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WinAltaAlumno.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WinAltaCurso.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="WinAltaDocente.xaml">
+    <Page Include="WinGestionDocentes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -133,11 +140,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WinModificarAlumno.xaml">
+    <Page Include="WinPrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WinPrincipal.xaml">
+    <Page Include="WinVistaPreviaUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,6 +228,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ModificarAlumno.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\GestionDocentes.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

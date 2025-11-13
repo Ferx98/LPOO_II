@@ -63,5 +63,8 @@ namespace ClasesBase
             get { return doc_ID; }
             set { doc_ID = value; }
         }
+        //Necesarios para comboBox de ABM Cursos
+        public string EstadoNombre { get; set; }
+        public string DocenteNombreCompleto { get; set; }
     }
 }

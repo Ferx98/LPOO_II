@@ -89,4 +89,11 @@
         <Setter Property="Background" Value="#141313"/>
         <Setter Property="BorderThickness" Value="0"/>
     </Style>
+    <!--Botón para Impresion de Listado de usuarios-->
+    <Style x:Key="btnImpresion" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource ResourceKey=AlumnoButtonTemplate}"/>
+        <Setter Property="Background" Value="#FFBE88F4"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+    </Style>
 </ResourceDictionary>

@@ -103,36 +103,36 @@ namespace Vistas
             this.Close();
         }
 
-        //Para abrir el formulario de alta de cursos
+        //Para abrir el formulario de ABM de cursos
         private void MenuItem_Click_2(object sender, RoutedEventArgs e)
         {
             cerrarSesionDesdeMenu = true;
-            WinAltaCurso oWinAltaCurso = new WinAltaCurso();
-            Application.Current.MainWindow = oWinAltaCurso;
-            oWinAltaCurso.Show();
+            WinABMCursos oWinABMCurso = new WinABMCursos();
+            Application.Current.MainWindow = oWinABMCurso;
+            oWinABMCurso.Show();
             this.Close();
         }
 
 
-        //Para abrir el formulario de alta de docentes
+        //Para abrir el formulario de ABM de docentes
         private void MenuItem_Click_3(object sender, RoutedEventArgs e)
         {
             cerrarSesionDesdeMenu = true;
 
-            WinAltaDocente oWinAltaDocente = new WinAltaDocente();
-            Application.Current.MainWindow = oWinAltaDocente;
-            oWinAltaDocente.Show();
+            WinABMDocentes oWinABMDocentes = new WinABMDocentes();
+            Application.Current.MainWindow = oWinABMDocentes;
+            oWinABMDocentes.Show();
 
             this.Close();
         }
 
-        //Para abrir el formulario de alta de alumnos
+        //Para abrir el formulario de ABM de alumnos
         private void MenuItem_Click_4(object sender, RoutedEventArgs e)
         {
             cerrarSesionDesdeMenu = true;
-            WinAltaAlumno oWinAltaAlumno = new WinAltaAlumno();
-            Application.Current.MainWindow = oWinAltaAlumno;
-            oWinAltaAlumno.Show();
+            WinABMAlumnos oWinABMAlumnos = new WinABMAlumnos();
+            Application.Current.MainWindow = oWinABMAlumnos;
+            oWinABMAlumnos.Show();
             this.Close();
         }
 
@@ -140,9 +140,7 @@ namespace Vistas
         private void MenuItem_Click_7(object sender, RoutedEventArgs e)
         {
             cerrarSesionDesdeMenu = true;
-            WinModificarAlumno oWinModificarAlumno = new WinModificarAlumno();
-            Application.Current.MainWindow = oWinModificarAlumno;
-            oWinModificarAlumno.Show();
+            
             this.Close();
         }
         
@@ -161,6 +159,15 @@ namespace Vistas
             cerrarSesionDesdeMenu = true;
             WinListaUsuarios oWinUsuarios = new WinListaUsuarios();
             oWinUsuarios.Show();
+            this.Close();
+        }
+
+        //Para abrir el formulario que permite cambiar el estado de los cursos de los docentes
+        private void MenuItem_Click_10(object sender, RoutedEventArgs e)
+        {
+            cerrarSesionDesdeMenu = true;
+            WinGestionDocentes oWinGestionDocentes = new WinGestionDocentes();
+            oWinGestionDocentes.Show();
             this.Close();
         }
     }
