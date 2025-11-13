@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Vistas.WinPrincipal"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Menú Principal" Height="381" Width="535" Background="#FFB3E8E8" Closing="Window_Closing">
+        Title="Menú Principal" Height="381" Width="535" Background="#FFB3E8E8" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
     <Grid>
         <Menu Height="42" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="547" FontFamily="Lune" FontSize="13" Background="#FFE8D4C4">
             <MenuItem FontSize="14">
@@ -13,7 +13,8 @@
                     </StackPanel>
                 </MenuItem.Header>
                 <MenuItem Header="Usuarios">
-                    <MenuItem Header="Alta de Usuarios" Click="MenuItem_Click_5" />
+                    <MenuItem Header="ABM de Usuarios" Click="MenuItem_Click_5" />
+                    <MenuItem Header="Listado de Usuarios" Click="MenuItem_Click_9" />
                 </MenuItem>
                 <MenuItem Header="Salir" Click="MenuItem_Click_1"/>
             </MenuItem>

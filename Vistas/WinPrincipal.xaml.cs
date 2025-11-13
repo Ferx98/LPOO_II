@@ -76,11 +76,11 @@ namespace Vistas
             }
         }
 
-        //Para abrir el formulario de alta de Usuarios
+        //Para abrir el formulario de ABM de usuarios
         private void MenuItem_Click_5(object sender, RoutedEventArgs e)
         {
             cerrarSesionDesdeMenu = true;
-            WinAltaUsuario oWinAltaUsuario = new WinAltaUsuario();
+            WinABMUsuarios oWinAltaUsuario = new WinABMUsuarios();
             Application.Current.MainWindow = oWinAltaUsuario;
             oWinAltaUsuario.Show();
             this.Close();
@@ -151,8 +151,16 @@ namespace Vistas
         {
             cerrarSesionDesdeMenu = true;
             WinListaCursos oWinCursos = new WinListaCursos();
-            //oWinCursos.Show();
             oWinCursos.Show();
+            this.Close();
+        }
+
+        //Para abrir el listado de usuarios
+        private void MenuItem_Click_9(object sender, RoutedEventArgs e)
+        {
+            cerrarSesionDesdeMenu = true;
+            WinListaUsuarios oWinUsuarios = new WinListaUsuarios();
+            oWinUsuarios.Show();
             this.Close();
         }
     }

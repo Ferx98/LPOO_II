@@ -39,3 +39,9 @@ C:\Users\usuario\OneDrive\Documentos\LPOO II\TP4-GRUPO02\lpoo2-grupo-02\ClasesBa
 C:\Users\usuario\OneDrive\Documentos\LPOO II\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
 C:\Users\usuario\OneDrive\Documentos\LPOO II\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\usuario\OneDrive\Documentos\LPOO II\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.dll
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\bin\Debug\ClasesBase.dll.config
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\bin\Debug\ClasesBase.dll
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\bin\Debug\ClasesBase.pdb
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.pdb

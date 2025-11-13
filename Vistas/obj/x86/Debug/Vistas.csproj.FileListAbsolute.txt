@@ -247,6 +247,43 @@ C:\Users\usuario\OneDrive\Documentos\LPOO II\TP4-GRUPO02\lpoo2-grupo-02\Vistas\o
 C:\Users\usuario\OneDrive\Documentos\LPOO II\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.g.resources
 C:\Users\usuario\OneDrive\Documentos\LPOO II\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
 C:\Users\usuario\OneDrive\Documentos\LPOO II\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP4-GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.exe.config
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.exe
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.exe
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.pdb
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\ControlUsuario\Login.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstilosMain.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\PlantillaMain.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMUsuarios.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinAltaAlumno.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinAltaCurso.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinAltaDocente.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaCursos.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinModificarAlumno.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinPrincipal.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\App.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\ControlUsuario\Login.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstadosDeCursos.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMUsuarios.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinAltaAlumno.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinAltaCurso.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinAltaDocente.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaCursos.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinModificarAlumno.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinPrincipal.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinWelcome.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\App.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas_MarkupCompile.cache
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas_MarkupCompile.lref
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstadosDeCursos.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinWelcome.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.g.resources
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaUsuarios.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaUsuarios.g.cs

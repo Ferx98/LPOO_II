@@ -80,4 +80,13 @@
         <Setter Property="Background" Value="#D14F7D"/>
         <Setter Property="BorderThickness" Value="0"/>
     </Style>
+    <!--Plantilla para botones de recorrido de listas-->
+    <Style x:Key="btn_plantilla_lista" TargetType="Button">
+        <Setter Property="Template" Value="{StaticResource ResourceKey=AlumnoButtonTemplate}"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Background" Value="#141313"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
 </ResourceDictionary>

@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase"
-        Title="Listado de Cursos" Background="#FAF0E6" Height="486" Width="904" Closing="Window_Closing_1" Loaded="Window_Loaded">
+        Title="Listado de Cursos" Background="#FAF0E6" Height="486" Width="904" Closing="Window_Closing_1" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <ObjectDataProvider
@@ -22,8 +22,8 @@
                     <GridViewColumn Width="85" Header="Cupo" DisplayMemberBinding="{Binding Path=cur_Cupo}" />
                     <GridViewColumn Width="152" Header="Fecha Inicio" DisplayMemberBinding="{Binding Path=cur_FechaInicio}" />
                     <GridViewColumn Width="152" Header="Fecha Finalizacion" DisplayMemberBinding="{Binding Path=cur_FechaFin}" />
-                    <GridViewColumn Width="85" Header="Estado" DisplayMemberBinding="{Binding Path=est_ID}" />
-                    <GridViewColumn Width="85" Header="Docente" DisplayMemberBinding="{Binding Path=doc_ID}" />
+                    <GridViewColumn Width="85" Header="Estado" DisplayMemberBinding="{Binding Path=Estado}" />
+                    <GridViewColumn Width="85" Header="Docente" DisplayMemberBinding="{Binding Path=Docente}" />
                 </GridView>
             </ListView.View>
         </ListView>

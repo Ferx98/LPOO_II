@@ -4177,7 +4177,6 @@ SELECT alu_ID, alu_DNI, alu_Apellido, alu_Nombre, alu_Email FROM Alumno WHERE (a
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClasesBase.Properties.Settings.Default.institutoConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4595,7 +4594,6 @@ SELECT cur_ID, cur_Nombre, cur_Descripcion, cur_Cupo, cur_FechaInicio, cur_Fecha
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClasesBase.Properties.Settings.Default.institutoConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4991,7 +4989,6 @@ SELECT doc_ID, doc_DNI, doc_Apellido, doc_Nombre, doc_Email FROM Docente WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClasesBase.Properties.Settings.Default.institutoConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5386,7 +5383,6 @@ SELECT est_ID, est_Nombre, esty_ID FROM Estado WHERE (est_ID = @est_ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClasesBase.Properties.Settings.Default.institutoConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5708,7 +5704,6 @@ SELECT est_ID, est_Nombre, esty_ID FROM Estado WHERE (est_ID = @est_ID)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClasesBase.Properties.Settings.Default.institutoConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6042,7 +6037,6 @@ SELECT ins_ID, ins_Fecha, cur_ID, alu_ID, est_ID FROM Inscripcion WHERE (ins_ID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClasesBase.Properties.Settings.Default.institutoConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6352,7 +6346,6 @@ SELECT ins_ID, ins_Fecha, cur_ID, alu_ID, est_ID FROM Inscripcion WHERE (ins_ID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClasesBase.Properties.Settings.Default.institutoConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6683,7 +6676,6 @@ SELECT usu_ID, usu_NombreUsuario, usu_Contraseña, usu_ApellidoNombre, rol_ID FR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ClasesBase.Properties.Settings.Default.institutoConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

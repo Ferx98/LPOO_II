@@ -26,21 +26,9 @@ namespace ClasesBase.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=\"C:\\Users\\usuario\\OneDrive\\Documentos\\L" +
-            "POO II\\TP4-GRUPO02\\lpoo2-grupo-02\\instituto.mdf\";Integrated Security=True;Connec" +
-            "t Timeout=30;User Instance=True")]
-        public string institutoConnectionString1 {
-            get {
-                return ((string)(this["institutoConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\Users\\usuario\\OneDrive\\Documentos\\LP" +
-            "OO II\\TP4-GRUPO02\\lpoo2-grupo-02\\instituto.mdf;Integrated Security=True;Connect " +
-            "Timeout=30;User Instance=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=C:\\Users\\juan_\\OneDrive\\Documentos\\lpoo" +
+            "2-grupo-02\\instituto.mdf;Integrated Security=True;Connect Timeout=30;User Instan" +
+            "ce=True")]
         public string institutoConnectionString {
             get {
                 return ((string)(this["institutoConnectionString"]));

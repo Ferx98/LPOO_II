@@ -74,11 +74,11 @@
     <Compile Include="WinAltaDocente.xaml.cs">
       <DependentUpon>WinAltaDocente.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WinAltaUsuario.xaml.cs">
-      <DependentUpon>WinAltaUsuario.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WinListaCursos.xaml.cs">
       <DependentUpon>WinListaCursos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinListaUsuarios.xaml.cs">
+      <DependentUpon>WinListaUsuarios.xaml</DependentUpon>
     </Compile>
     <Compile Include="WinModificarAlumno.xaml.cs">
       <DependentUpon>WinModificarAlumno.xaml</DependentUpon>
@@ -125,11 +125,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WinAltaUsuario.xaml">
+    <Page Include="WinListaCursos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WinListaCursos.xaml">
+    <Page Include="WinListaUsuarios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

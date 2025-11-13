@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Vistas.WinAltaDocente"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Formulario de Docentes" Height="400" Width="500" Background="#FAF0E6" Closing="Window_Closing">
+        Title="Formulario de Docentes" Height="400" Width="500" Background="#FAF0E6" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label Content="Nombre:" Height="28" Margin="81,136,326,0" Name="label1" VerticalAlignment="Top" FontSize="14" />
         <Label Content="Apellido:" Height="28" HorizontalAlignment="Left" Margin="81,172,0,0" Name="label2" VerticalAlignment="Top" Width="64" FontSize="14" />

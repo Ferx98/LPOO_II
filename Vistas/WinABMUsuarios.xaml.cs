@@ -54,6 +54,11 @@ namespace Vistas
             cmbRoles.ItemsSource = listaRoles;
             cmbRoles.DisplayMemberPath = "Rol_Descripcion"; // lo que ve el usuario
             cmbRoles.SelectedValuePath = "Rol_ID";          // lo que se guarda internamente
+
+            btnGuardar.IsEnabled = false;
+            btnModificar.IsEnabled = false;
+            btnEliminar.IsEnabled = false;
+            btnCancelar.IsEnabled = false;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -83,6 +88,8 @@ namespace Vistas
         {
             Vista.MoveCurrentToFirst();
             ActualizarBindings();
+            if (rbtnModificar.IsChecked == true || rbtnEliminar.IsChecked == true) CargarDatosUsuarioActual();
+            
         }
 
         //Método para regresar al registro anterior
@@ -91,6 +98,7 @@ namespace Vistas
             Vista.MoveCurrentToPrevious();
             if (Vista.IsCurrentBeforeFirst) Vista.MoveCurrentToLast();
             ActualizarBindings();
+            if (rbtnModificar.IsChecked == true || rbtnEliminar.IsChecked == true) CargarDatosUsuarioActual();
         }
 
         //Método para pasar al siguiente registro
@@ -99,6 +107,7 @@ namespace Vistas
             Vista.MoveCurrentToNext();
             if (Vista.IsCurrentAfterLast) Vista.MoveCurrentToFirst();
             ActualizarBindings();
+            if (rbtnModificar.IsChecked == true || rbtnEliminar.IsChecked == true) CargarDatosUsuarioActual();
         }
 
         //Método para pasar al último registro
@@ -106,6 +115,7 @@ namespace Vistas
         {
             Vista.MoveCurrentToLast();
             ActualizarBindings();
+            if (rbtnModificar.IsChecked == true || rbtnEliminar.IsChecked == true) CargarDatosUsuarioActual();
         }
 
         //Actualiza el Binding de las propiedades del registro actual
@@ -193,9 +203,10 @@ namespace Vistas
                 oUsuario.Rol_ID = Convert.ToInt32(cmbRoles.SelectedValue);
 
                 TrabajarUsuario.updateUsuario(oUsuario);
+                load_usuarios();
 
                 MessageBox.Show("El usuario se modifico correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
-                load_usuarios();
+                
             }
         }
 
@@ -235,6 +246,15 @@ namespace Vistas
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
             clean_formulario();
+            // Se desmarcan los radio buttons
+            rbtnAlta.IsChecked = false;
+            rbtnModificar.IsChecked = false;
+            rbtnEliminar.IsChecked = false;
+
+            btnGuardar.IsEnabled = false;
+            btnModificar.IsEnabled = false;
+            btnEliminar.IsEnabled = false;
+            btnCancelar.IsEnabled = false;
         }
 
         //metodo para limpiar todo el formulario
@@ -249,9 +269,56 @@ namespace Vistas
         private void load_usuarios()
         {
             ObjectDataProvider odp = (ObjectDataProvider)this.Resources["LIST_USER"];
+            //Fuerza al ObjectDataProvider a volver a ejecutar el método TraerUsuarios()
+            odp.Refresh();
             listaUsuario = odp.Data as ObservableCollection<Usuario>;
             Vista = (CollectionView)CollectionViewSource.GetDefaultView(listaUsuario);
             ActualizarBindings();
+        }
+
+        private void rbtnAlta_Checked(object sender, RoutedEventArgs e)
+        {
+            btnGuardar.IsEnabled = true;
+            btnCancelar.IsEnabled = true;
+            btnModificar.IsEnabled = false;
+            btnEliminar.IsEnabled = false;
+            clean_formulario();
+        }
+
+        private void rbtnModificar_Checked(object sender, RoutedEventArgs e)
+        {
+            btnGuardar.IsEnabled = false;
+            btnModificar.IsEnabled = true;
+            btnCancelar.IsEnabled = true;
+            btnEliminar.IsEnabled = false;
+            CargarDatosUsuarioActual();
+        }
+
+        private void rbtnEliminar_Checked(object sender, RoutedEventArgs e)
+        {
+            btnGuardar.IsEnabled = false;
+            btnModificar.IsEnabled = false;
+            btnEliminar.IsEnabled = true;
+            btnCancelar.IsEnabled = true;
+            CargarDatosUsuarioActual();
+        }
+
+        //Método para cargar los datos del usuario seleccionado
+        private void CargarDatosUsuarioActual()
+        {
+            if (Vista != null && Vista.CurrentItem != null)
+            {
+                Usuario oUsuario = (Usuario)Vista.CurrentItem;
+
+                txtNombreUsuario.Text = oUsuario.Usu_NombreUsuario;
+                txtContraseña.Password = oUsuario.Usu_Contraseña;
+                txtApellidoNombre.Text = oUsuario.Usu_ApellidoNombre;
+                cmbRoles.SelectedValue = oUsuario.Rol_ID;
+            }
+            else
+            {
+                MessageBox.Show("No hay un usuario seleccionado.", "Atención", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }
