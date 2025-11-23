@@ -78,6 +78,45 @@ namespace ClasesBase
             return count > 0;
         }
 
+        //ESTA FUNCIÓN CONTROLA QUE NO HAYA EMAIL REPETIDOS AL MOMENTO DE QUERER DAR DE ALTA
+        public static bool existe_email(string email) 
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "SELECT COUNT(*) FROM Alumno WHERE LOWER(Alu_Email) = @email";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@email", (email ?? "").ToLower());
+
+            cnn.Open();
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            cnn.Close();
+
+            return count > 0;
+        }
+
+        //ESTA FUNCIÓN CONTROLA QUE NO HAYA EMAIL REPETIDOS AL MOMENTO DE MODIFICAR LOS DATOS
+        public static bool existe_email_modificacion(string email, int id) 
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
+            SqlCommand cmd = new SqlCommand();
+
+            cmd.CommandText = "SELECT COUNT(*) FROM Alumno WHERE LOWER(Alu_Email) = @email AND Alu_ID <> @ID";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = cnn;
+
+            cmd.Parameters.AddWithValue("@email", (email ?? "").ToLower());
+            cmd.Parameters.AddWithValue("@ID", id);
+
+            cnn.Open();
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+            cnn.Close();
+
+            return count > 0;
+        }
+
         //ESTA FUNCIÓN AGREGA ALUMNOS
         public static int insert_alumno(Alumno alumno)
         {

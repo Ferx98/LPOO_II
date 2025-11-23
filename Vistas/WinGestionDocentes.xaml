@@ -14,15 +14,18 @@
           DisplayMemberPath="Doc_NombreCompleto"
           SelectedValuePath="Doc_ID"
           SelectedValue="{Binding Doc_ID, Mode=TwoWay}"
-          Width="172" Height="28" Margin="424,257,0,0"
+          Width="227" Height="28" Margin="412,259,0,0"
           HorizontalAlignment="Left" VerticalAlignment="Top" SelectionChanged="cmbDocentes_SelectionChanged" FontFamily="Arial" FontSize="15" />
         <ListView Height="244"
           HorizontalAlignment="Left"
           Margin="178,311,0,0"
           VerticalAlignment="Top"
-          Width="691" Name="listCursos" SelectionChanged="listCursos_SelectionChanged" FontFamily="Arial" Background="#FFE5EFEA" Foreground="Black" BorderBrush="#FF6726F5">
+          Width="700" Name="listCursos" SelectionChanged="listCursos_SelectionChanged" FontFamily="Arial" Background="#FFE5EFEA" Foreground="Black" BorderBrush="#FF6726F5">
             <ListView.View>
                 <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <StaticResource ResourceKey="gdrEncabezados"/>
+                    </GridView.ColumnHeaderContainerStyle>
                     <GridViewColumn Header="Curso" Width="130" DisplayMemberBinding="{Binding Cur_Nombre}" />
                     <GridViewColumn Header="Descripción" Width="200" DisplayMemberBinding="{Binding Cur_Descripcion}" />
                     <GridViewColumn Header="Cupo" Width="50" DisplayMemberBinding="{Binding Cur_Cupo}" />
@@ -31,7 +34,7 @@
                             <Binding Path="Cur_FechaInicio" StringFormat="{}{0:dd/MM/yyyy}" />
                         </GridViewColumn.DisplayMemberBinding>
                     </GridViewColumn>
-                    <GridViewColumn Header="Fecha de finalización" Width="120">
+                    <GridViewColumn Header="Fecha de finalización" Width="130">
                         <GridViewColumn.DisplayMemberBinding>
                             <Binding Path="Cur_FechaFin" StringFormat="{}{0:dd/MM/yyyy}" />
                         </GridViewColumn.DisplayMemberBinding>

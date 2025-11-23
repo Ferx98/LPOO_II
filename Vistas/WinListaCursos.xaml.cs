@@ -40,8 +40,8 @@ namespace Vistas
             if (resultado == MessageBoxResult.Yes)
             {
 
-                WinPrincipal menu = new WinPrincipal();
-                menu.Show();
+                WinPrincipal oMenu = new WinPrincipal();
+                oMenu.Show();
             }
             else
             {

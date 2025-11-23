@@ -1,0 +1,44 @@
+﻿<Window x:Class="Vistas.WinResultados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:svc="clr-namespace:ClasesBase;assembly=ClasesBase"
+        Title="Resultados" Height="668" Width="772" WindowStartupLocation="CenterScreen" Background="#FAF0E6" Closing="Window_Closing">
+    <Window.Resources>
+        <ObjectDataProvider x:Key="LIST_ALUMNOS"
+                        ObjectType="{x:Type svc:TrabajarAlumnos}"
+                        MethodName="TraerAlumnos" />
+    </Window.Resources>
+    <Grid>
+        <ComboBox Height="25" HorizontalAlignment="Left" Margin="273,180,0,0" Name="cmbAlumnos" VerticalAlignment="Top" Width="216" ItemsSource="{Binding Source={StaticResource LIST_ALUMNOS}}"
+          DisplayMemberPath="Alu_NombreCompleto"
+          SelectedValuePath="Alu_ID"
+          SelectedValue="{Binding Alu_ID, Mode=TwoWay}" SelectionChanged="cmbAlumnos_SelectionChanged" FontFamily="Lune" FontSize="14" Foreground="#FF2C6ACB" BorderBrush="Black" />
+        <ListView Height="244"
+          HorizontalAlignment="Left"
+          Margin="151,223,0,0"
+          VerticalAlignment="Top"
+          Width="464" Name="listInscripciones"  FontFamily="Arial" Background="#FFE5EFEA" Foreground="Black" BorderBrush="#FF6726F5">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <StaticResource ResourceKey="gdrEncabezados"/>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Header="Fecha de finalización" Width="130">
+                        <GridViewColumn.DisplayMemberBinding>
+                            <Binding Path="CursoFechaFin" StringFormat="{}{0:dd/MM/yyyy}" />
+                        </GridViewColumn.DisplayMemberBinding>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Curso" Width="200" DisplayMemberBinding="{Binding CursoNombre}" />
+                    <GridViewColumn Header="Docente a cargo" Width="130" DisplayMemberBinding="{Binding DocenteNombre}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Cursos Finalizados:" Height="28" HorizontalAlignment="Left" Margin="222,495,0,0" Name="label1" VerticalAlignment="Top" Background="{x:Null}" FontSize="14" FontFamily="Arial" FontWeight="SemiBold" Foreground="#FFEB7C7C" />
+        <Label Content="Cursos en curso:" Height="28" HorizontalAlignment="Left" Margin="240,529,0,0" Name="label2" VerticalAlignment="Top" Background="{x:Null}" FontFamily="Arial" FontSize="14" FontWeight="SemiBold" Foreground="#FF6EA02F" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="361,500,0,0" Name="txtFinalizados" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="14" Foreground="#FFDE8C2B" FontWeight="SemiBold" BorderThickness="0" Background="{x:Null}" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="361,534,0,0" Name="txtEnCurso" VerticalAlignment="Top" Width="120" FontFamily="Arial" FontSize="14" Foreground="#FFDE8C2B" FontWeight="SemiBold" BorderThickness="0" Background="{x:Null}" />
+        <Button Style="{StaticResource ResourceKey=btn_plantilla_atras}" Content="Atrás" Height="32" HorizontalAlignment="Left" Margin="83,572,0,0" Name="btnAtras" VerticalAlignment="Top" Width="75" Click="btnAtras_Click" />
+        <Image Height="118" HorizontalAlignment="Left" Margin="309,22,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="134" Source="/Vistas;component/Images/WinResultados.png" />
+        <Label Content="Elija un alumno" Height="28" HorizontalAlignment="Left" Margin="319,146,0,0" Name="label3" VerticalAlignment="Top" FontFamily="Lune" FontSize="14" Foreground="#FF32A9D8" FontWeight="SemiBold" />
+    </Grid>
+</Window>

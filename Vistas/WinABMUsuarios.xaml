@@ -21,10 +21,10 @@
         <Label Content="Contraseña:" FontFamily="Lune" FontSize="15" Height="28" HorizontalAlignment="Left" Margin="583,358,0,0" Name="label3" VerticalAlignment="Top" />
         <Label Content="Apellido y Nombre:" FontFamily="Lune" FontSize="15" Height="28" HorizontalAlignment="Left" Margin="583,404,0,0" Name="label4" VerticalAlignment="Top" />
         <Label Content="Rol:" FontFamily="Lune" FontSize="15" Height="28" HorizontalAlignment="Left" Margin="583,453,0,0" Name="label5" VerticalAlignment="Top" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="774,314,0,0" Name="txtNombreUsuario" VerticalAlignment="Top" Width="172" FontFamily="Lune" FontSize="14" />
-        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="774,358,0,0" Name="txtContraseña" VerticalAlignment="Top" Width="172" FontSize="14" FontFamily="Lune" />
-        <TextBox Height="23" HorizontalAlignment="Left" Margin="774,404,0,0" Name="txtApellidoNombre" VerticalAlignment="Top" Width="172" FontFamily="Lune" FontSize="14" />
-        <ComboBox DisplayMemberPath="Rol_Descripcion" SelectedValuePath="Rol_ID" Height="23" HorizontalAlignment="Left" Margin="774,453,0,0" Name="cmbRoles" VerticalAlignment="Top" Width="172" FontSize="14" FontFamily="Lune" />
+        <TextBox Style="{StaticResource ErrorBreathingStyle}" Height="23" HorizontalAlignment="Left" Margin="774,314,0,0" Name="txtNombreUsuario" VerticalAlignment="Top" Width="172" FontFamily="Lune" FontSize="14" />
+        <PasswordBox Height="23" HorizontalAlignment="Left" Margin="774,363,0,0" Name="txtContraseña" VerticalAlignment="Top" Width="172" FontSize="14" FontFamily="Lune" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="774,409,0,0" Name="txtApellidoNombre" VerticalAlignment="Top" Width="172" FontFamily="Lune" FontSize="14" />
+        <ComboBox DisplayMemberPath="Rol_Descripcion" SelectedValuePath="Rol_ID" Height="23" HorizontalAlignment="Left" Margin="774,458,0,0" Name="cmbRoles" VerticalAlignment="Top" Width="172" FontSize="14" FontFamily="Lune" />
         <Button Style="{StaticResource ResourceKey=btn_plantilla_registrar}" Content="Guardar" Height="33" HorizontalAlignment="Left" Margin="579,523,0,0" Name="btnGuardar" VerticalAlignment="Top" Width="75" Click="btnGuardar_Click"/>
         <Button Style="{StaticResource ResourceKey=btn_plantilla_modificar}" Content="Modificar" Height="33" HorizontalAlignment="Left" Margin="675,523,0,0" Name="btnModificar" VerticalAlignment="Top" Width="75" Click="btnModificar_Click"/>
         <Button Style="{StaticResource ResourceKey=btn_plantilla_eliminar}" Content="Eliminar" Height="33" HorizontalAlignment="Left" Margin="774,523,0,0" Name="btnEliminar" VerticalAlignment="Top" Width="75" Click="btnEliminar_Click" />

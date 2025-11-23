@@ -96,4 +96,23 @@
         <Setter Property="Foreground" Value="White"></Setter>
         <Setter Property="FontWeight" Value="Bold"></Setter>
     </Style>
+    
+    <!--EFECTO RESPIRACION PARA CAMPOS DONDE SE PRODUCEN ERRORES-->
+    <Style x:Key="ErrorBreathingStyle" TargetType="Control">
+        <Style.Triggers>
+            <Trigger Property="Tag" Value="error">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard RepeatBehavior="Forever" AutoReverse="True">
+                            <ColorAnimation Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)"
+                                            To="Red" Duration="0:0:0.6" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+
+                <Setter Property="BorderThickness" Value="2"/>
+                <Setter Property="BorderBrush" Value="DarkRed"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 </ResourceDictionary>

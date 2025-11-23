@@ -259,14 +259,12 @@ C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Pla
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstilosMain.baml
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\PlantillaMain.baml
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMUsuarios.baml
-C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinAltaAlumno.baml
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaCursos.baml
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinPrincipal.baml
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\App.baml
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\ControlUsuario\Login.g.cs
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstadosDeCursos.g.cs
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMUsuarios.g.cs
-C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinAltaAlumno.g.cs
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaCursos.g.cs
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinPrincipal.g.cs
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinWelcome.g.cs
@@ -291,45 +289,96 @@ C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Pla
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinGestionDocentes.g.cs
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinVistaPreviaUsuarios.baml
 C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\Prueba Final TP2 - Estilos, Plantillas y Triggers\TP4-GRUPO02\TP4-GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinVistaPreviaUsuarios.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.exe.config
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.exe
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.pdb
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.exe
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.pdb
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\ClasesBase.dll
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\ClasesBase.pdb
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\ControlUsuario\Login.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstilosMain.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\PlantillaMain.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMAlumnos.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMCursos.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMDocentes.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMUsuarios.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinGestionDocentes.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaCursos.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaUsuarios.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinPrincipal.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinVistaPreviaUsuarios.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\App.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\ControlUsuario\Login.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstadosDeCursos.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMAlumnos.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMCursos.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMDocentes.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMUsuarios.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinGestionDocentes.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaCursos.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaUsuarios.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinPrincipal.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinVistaPreviaUsuarios.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinWelcome.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\App.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas_MarkupCompile.cache
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas_MarkupCompile.lref
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstadosDeCursos.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinWelcome.baml
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.g.resources
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
-C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TP5 - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.exe
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.pdb
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\ControlUsuario\Login.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstilosMain.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\PlantillaMain.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMAlumnos.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMCursos.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMDocentes.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMUsuarios.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinGestionDocentes.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaCursos.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaUsuarios.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinPrincipal.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinVistaPreviaUsuarios.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\App.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\ControlUsuario\Login.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstadosDeCursos.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMAlumnos.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMCursos.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMDocentes.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMUsuarios.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinGestionDocentes.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaCursos.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaUsuarios.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinPrincipal.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinVistaPreviaUsuarios.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinWelcome.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\App.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas_MarkupCompile.cache
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas_MarkupCompile.lref
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstadosDeCursos.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinWelcome.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.g.resources
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\Ingresando.baml
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\Ingresando.g.cs
+C:\Users\usuario\Documents\LPOOII\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas_Content.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.pdb
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.exe
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.pdb
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\ClasesBase.dll
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\ClasesBase.pdb
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.csprojResolveAssemblyReference.cache
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\ControlUsuario\Login.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\EstilosMain.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Ingresando.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\PlantillaMain.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMAlumnos.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMCursos.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMDocentes.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMUsuarios.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinGestionDocentes.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaCursos.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaUsuarios.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinPrincipal.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinVistaPreviaUsuarios.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\App.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\ControlUsuario\Login.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Ingresando.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMAlumnos.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMCursos.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMDocentes.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinABMUsuarios.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinGestionDocentes.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaCursos.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinListaUsuarios.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinPrincipal.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinVistaPreviaUsuarios.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinWelcome.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\App.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas_Content.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas_MarkupCompile.cache
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas_MarkupCompile.lref
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinWelcome.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.g.resources
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.Properties.Resources.resources
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.csproj.GenerateResource.Cache
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinResultados.baml
+C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\WinResultados.g.cs
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TPFINAL - GRUPO02\lpoo2-grupo-02\Vistas\bin\Debug\Vistas.exe.config
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TPFINAL - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.exe
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TPFINAL - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\Vistas.pdb

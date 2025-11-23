@@ -21,9 +21,9 @@
         <Label Content="Apellido:" FontFamily="Lune" FontSize="15" Height="28" HorizontalAlignment="Left" Margin="618,347,0,0" Name="label3" VerticalAlignment="Top" />
         <Label Content="Email:" FontFamily="Lune" FontSize="15" Height="28" HorizontalAlignment="Left" Margin="642,385,0,0" Name="label4" VerticalAlignment="Top" />
         <Label Content="DNI:" FontFamily="Lune" FontSize="15" Height="28" HorizontalAlignment="Left" Margin="655,424,0,0" Name="label5" VerticalAlignment="Top" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="704,304,0,0" Name="txtNombre" VerticalAlignment="Top" Width="172" FontFamily="Lune" FontSize="16" />
-        
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="704,383,0,0" Name="txtEmail" VerticalAlignment="Top" Width="172" FontFamily="Lune" FontSize="16" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="704,308,0,0" Name="txtNombre" VerticalAlignment="Top" Width="172" FontFamily="Lune" FontSize="16" />
+
+        <TextBox Style="{StaticResource ErrorBreathingStyle}" Height="28" HorizontalAlignment="Left" Margin="704,388,0,0" Name="txtEmail" VerticalAlignment="Top" Width="172" FontFamily="Lune" FontSize="16" />
         <Button Style="{StaticResource ResourceKey=btn_plantilla_registrar}" Content="Guardar" Height="33" HorizontalAlignment="Left" Margin="579,523,0,0" Name="btnGuardar" VerticalAlignment="Top" Width="75" Click="btnGuardar_Click" />
         <Button Style="{StaticResource ResourceKey=btn_plantilla_modificar}" Content="Modificar" Height="33" HorizontalAlignment="Left" Margin="675,523,0,0" Name="btnModificar" VerticalAlignment="Top" Width="75" Click="btnModificar_Click" />
         <Button Style="{StaticResource ResourceKey=btn_plantilla_eliminar}" Content="Eliminar" Height="33" HorizontalAlignment="Left" Margin="774,523,0,0" Name="btnEliminar" VerticalAlignment="Top" Width="75" Click="btnEliminar_Click" />
@@ -51,7 +51,7 @@
         <Label Content="Apellido:" Height="28" HorizontalAlignment="Left" Margin="23,342,0,0" Name="label8" VerticalAlignment="Top" FontSize="15" FontFamily="Lune"/>
         <Label Content="Email:" Height="28" HorizontalAlignment="Left" Margin="23,380,0,0" Name="label9" VerticalAlignment="Top" FontSize="15" FontFamily="Lune"/>
         <Label Content="DNI:" Height="28" HorizontalAlignment="Left" Margin="23,419,0,0" Name="label10" VerticalAlignment="Top" FontSize="15" FontFamily="Lune"/>
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="704,345,0,0" Name="txtApellido" VerticalAlignment="Top" Width="172" FontSize="16" FontFamily="Lune" />
-        <TextBox Height="28" HorizontalAlignment="Left" Margin="704,422,0,0" Name="txtDNI" VerticalAlignment="Top" Width="172" FontSize="16" FontFamily="Lune"/>
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="704,350,0,0" Name="txtApellido" VerticalAlignment="Top" Width="172" FontSize="16" FontFamily="Lune" />
+        <TextBox Style="{StaticResource ErrorBreathingStyle}" Height="28" HorizontalAlignment="Left" Margin="704,427,0,0" Name="txtDNI" VerticalAlignment="Top" Width="172" FontSize="16" FontFamily="Lune"/>
     </Grid>
 </Window>

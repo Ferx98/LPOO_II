@@ -75,5 +75,14 @@ namespace Vistas
         {
             this.Close();
         }
+
+        private void btnVistaPrevia_Click(object sender, RoutedEventArgs e)
+        {
+            ICollectionView vistaFiltrada = vistaColeccionFiltrada.View;
+            WinVistaPreviaUsuarios winVistaPrevia = new WinVistaPreviaUsuarios(vistaFiltrada);
+            this.Hide();
+            winVistaPrevia.ShowDialog();
+            this.Show();
+        }
     }
 }

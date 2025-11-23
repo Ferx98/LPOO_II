@@ -18,6 +18,7 @@ namespace Vistas
     /// </summary>
     public partial class WinWelcome : Window
     {
+        public static string RolActual;
         //Bandera necesaria para que no quiera cerrarse la aplicación cuando ingresamos
         private bool loginExitoso = false;
         public WinWelcome()
@@ -27,34 +28,10 @@ namespace Vistas
 
         private void btnIngresar_Click(object sender, RoutedEventArgs e)
         {
-            Roles rolAdmin = new Roles(1, "Administrador");
-            Roles rolDocente = new Roles(2, "Docente");
-            Roles rolRecepcion = new Roles(3, "Recepcion");
-            //Usuarios
-            Usuario usuario1 = new Usuario(1, "fer", "123", "Aparicio Fernando", 1);
-            Usuario usuario2 = new Usuario(2, "flor", "asd", "Choque Florencia", 2);
-            Usuario usuario3 = new Usuario(3, "gabriel", "123", "Herrera Gabriel", 3);
-            Usuario usuario4 = new Usuario(4, "juan", "zxc", "Guerrero Juan María", 1);
-            //Se agrega la referencia para usar las propiedades públicas definidas en el control de usuario.
             string nomUsuario = login.NombreUsuario;
             string contraseña = login.Contraseña;
-            Usuario usuarioEncontrado = null;
-            if (usuario1.Usu_NombreUsuario == nomUsuario && usuario1.Usu_Contraseña == contraseña)
-            {
-                usuarioEncontrado = usuario1;
-            }
-            else if (usuario2.Usu_NombreUsuario == nomUsuario && usuario2.Usu_Contraseña == contraseña)
-            {
-                usuarioEncontrado = usuario2;
-            }
-            else if (usuario3.Usu_NombreUsuario == nomUsuario && usuario3.Usu_Contraseña == contraseña)
-            {
-                usuarioEncontrado = usuario3;
-            }
-            else if (usuario4.Usu_NombreUsuario == nomUsuario && usuario4.Usu_Contraseña == contraseña)
-            {
-                usuarioEncontrado = usuario4;
-            }
+
+            Usuario usuarioEncontrado = TrabajarUsuario.ValidarUsuario(nomUsuario, contraseña);
 
             if (usuarioEncontrado != null)
             {
@@ -62,8 +39,11 @@ namespace Vistas
                                 "Acceso permitido",
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Information);
+
+                Sesion.UsuarioLogueado = usuarioEncontrado;//guarda el usuario globalmente
                 WinPrincipal menu = new WinPrincipal();
                 menu.Show();
+
                 loginExitoso = true;
                 this.Close();
             }

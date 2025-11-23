@@ -42,5 +42,9 @@ namespace ClasesBase
             get { return est_ID; }
             set { est_ID = value; }
         }
+        //PROPIEDADES AUXILIARES PARA MOSTRAR DATOS EN WinResultados.
+        public string CursoNombre { get; set; }
+        public DateTime CursoFechaFin { get; set; }
+        public string DocenteNombre { get; set; }
     }
 }

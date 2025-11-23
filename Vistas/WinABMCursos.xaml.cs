@@ -49,6 +49,8 @@ namespace Vistas
             btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             btnCancelar.IsEnabled = false;
+
+            HabilitarCampos(false);
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -71,6 +73,17 @@ namespace Vistas
                 //Se cancela el cierre si se elige "No"
                 e.Cancel = true;
             }
+        }
+
+        //PROCEDIMIENTO PARA HABILITAR LOS CAMPOS SOLO CUANDO SE SELECCIONE ALGUN RADIO BUTTON.
+        private void HabilitarCampos(bool habilitar)
+        {
+            txtNombre.IsEnabled = habilitar;
+            txtDescripcion.IsEnabled = habilitar;
+            txtCupo.IsEnabled = habilitar;
+            dtpFechaInicio.IsEnabled = habilitar;
+            dtpFechaFin.IsEnabled = habilitar;
+            cmbDocentes.IsEnabled = habilitar;
         }
 
         //Método para ir al primer registro
@@ -136,8 +149,6 @@ namespace Vistas
                 txtCupo.Text = oCurso.Cur_Cupo.ToString();
                 dtpFechaInicio.SelectedDate = oCurso.Cur_FechaInicio;
                 dtpFechaFin.SelectedDate = oCurso.Cur_FechaFin;
-                // Asignamos los valores de los ComboBox
-                cmbEstados.SelectedValue = oCurso.Est_ID;
                 cmbDocentes.SelectedValue = oCurso.Doc_ID;
                 txtEstado.Text = oCurso.EstadoNombre;
                 txtDocente.Text = oCurso.DocenteNombreCompleto;
@@ -156,7 +167,6 @@ namespace Vistas
             txtCupo.Text = "";
             dtpFechaInicio.SelectedDate = null;
             dtpFechaFin.SelectedDate = null;
-            cmbEstados.SelectedIndex = -1;
             cmbDocentes.SelectedIndex = -1;
         }
 
@@ -172,6 +182,7 @@ namespace Vistas
 
         private void rbtnAlta_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(true);
             btnGuardar.IsEnabled = true;
             btnCancelar.IsEnabled = true;
             btnModificar.IsEnabled = false;
@@ -181,6 +192,7 @@ namespace Vistas
 
         private void rbtnModificar_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(true);
             btnGuardar.IsEnabled = false;
             btnModificar.IsEnabled = true;
             btnCancelar.IsEnabled = true;
@@ -190,6 +202,7 @@ namespace Vistas
 
         private void rbtnEliminar_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(false);
             btnGuardar.IsEnabled = false;
             btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = true;
@@ -200,6 +213,9 @@ namespace Vistas
         //ALTA DE CURSOS
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
+            //SE RETIRAN LOS ESTILOS PARA EVITAR SU REPETICION
+            dtpFechaInicio.Tag = null;
+            dtpFechaFin.Tag = null;
             bool puedeGuardar = true;
 
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
@@ -214,6 +230,7 @@ namespace Vistas
 
             if (puedeGuardar && dtpFechaInicio.SelectedDate >= dtpFechaFin.SelectedDate)
             {
+                dtpFechaInicio.Tag = "error";
                 MessageBox.Show("La fecha de inicio debe ser menor que la fecha de fin.", "Validación de fechas", MessageBoxButton.OK, MessageBoxImage.Error);
                 puedeGuardar = false;
             }
@@ -223,20 +240,42 @@ namespace Vistas
                 MessageBoxResult resultado = MessageBox.Show("¿Está seguro de que desea registrar este nuevo curso?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (resultado == MessageBoxResult.Yes)
                 {
-                    Curso oCurso = new Curso();
-                    oCurso.Cur_Nombre = txtNombre.Text;
-                    oCurso.Cur_Descripcion = txtDescripcion.Text;
-                    oCurso.Cur_Cupo = Convert.ToInt32(txtCupo.Text);
-                    oCurso.Cur_FechaInicio = dtpFechaInicio.SelectedDate.Value;
-                    oCurso.Cur_FechaFin = dtpFechaFin.SelectedDate.Value;
-                    oCurso.Est_ID = Convert.ToInt32(cmbEstados.SelectedValue);
-                    oCurso.Doc_ID = Convert.ToInt32(cmbDocentes.SelectedValue);
+                    try
+                    {
+                        Curso oCurso = new Curso();
+                        oCurso.Cur_Nombre = txtNombre.Text;
+                        oCurso.Cur_Descripcion = txtDescripcion.Text;
+                        oCurso.Cur_Cupo = Convert.ToInt32(txtCupo.Text);
+                        oCurso.Cur_FechaInicio = dtpFechaInicio.SelectedDate.Value;
+                        oCurso.Cur_FechaFin = dtpFechaFin.SelectedDate.Value;
+                        oCurso.Doc_ID = Convert.ToInt32(cmbDocentes.SelectedValue);
 
-                    TrabajarCursos.insert_curso(oCurso);
+                        TrabajarCursos.insert_curso(oCurso);
 
-                    MessageBox.Show("Curso registrado correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
-                    load_cursos();
-                    clean_formulario();
+                        MessageBox.Show("Curso registrado correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                        load_cursos();
+                        clean_formulario();
+                    }
+                    catch (Exception ex) 
+                    {
+                        // SE LIMPIAN LOS ESTADOS PREVIOS
+                        dtpFechaInicio.Tag = null;
+                        dtpFechaFin.Tag = null;
+
+                        string msg = ex.Message.ToLower(); //VARIABLE QUE GUARDA EL MENSAJE PARA SABER DONDE ACTIVAR EL BORDE ROJO DE ERROR.
+
+                        if (msg.Contains("inicio"))
+                        {
+                            dtpFechaInicio.Tag = "error";
+                        }
+                        else if (msg.Contains("finalización"))
+                        {
+                            dtpFechaFin.Tag = "error";
+                        }
+                        MessageBox.Show(ex.Message, "Error al registrar",
+                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                    
                 }
             }
         }
@@ -244,6 +283,9 @@ namespace Vistas
         //MODIFICACIÓN DE CURSOS
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
+            //SE RETIRAN LOS ESTILOS PARA EVITAR SU REPETICION
+            dtpFechaInicio.Tag = null;
+            dtpFechaFin.Tag = null;
             if (Vista.CurrentItem == null)
             {
                 MessageBox.Show("Elija el curso que desee modificar.", "Aviso", MessageBoxButton.OK, MessageBoxImage.Warning);
@@ -251,30 +293,66 @@ namespace Vistas
             else
             {
                 Curso oCurso = (Curso)Vista.CurrentItem;
-
-                if (dtpFechaInicio.SelectedDate >= dtpFechaFin.SelectedDate)
+                DateTime hoy = DateTime.Today;
+                if (dtpFechaInicio.SelectedDate < hoy)
                 {
-                    MessageBox.Show("La fecha de inicio debe ser menor que la fecha de fin.", "Validación de fechas", MessageBoxButton.OK, MessageBoxImage.Error);
+                    dtpFechaInicio.Tag = "error";
+                    MessageBox.Show("La fecha de inicio no puede ser menor a la fecha actual.", "Validación de fechas", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                else
+                else 
                 {
-                    MessageBoxResult resultado = MessageBox.Show("¿Está seguro de que desea modificar este curso?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                    if (resultado == MessageBoxResult.Yes)
+                    if (dtpFechaFin.SelectedDate < hoy)
                     {
-                        oCurso.Cur_Nombre = txtNombre.Text;
-                        oCurso.Cur_Descripcion = txtDescripcion.Text;
-                        oCurso.Cur_Cupo = Convert.ToInt32(txtCupo.Text);
-                        oCurso.Cur_FechaInicio = dtpFechaInicio.SelectedDate.Value;
-                        oCurso.Cur_FechaFin = dtpFechaFin.SelectedDate.Value;
-                        oCurso.Est_ID = Convert.ToInt32(cmbEstados.SelectedValue);
-                        oCurso.Doc_ID = Convert.ToInt32(cmbDocentes.SelectedValue);
-
-                        TrabajarCursos.updateCurso(oCurso);
-
-                        MessageBox.Show("Curso modificado correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
-                        load_cursos();
+                        dtpFechaFin.Tag = "error";
+                        MessageBox.Show("La fecha de finalización no puede ser menor a la fecha actual.", "Validación de fechas", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
+                    else 
+                    {
+                        if (dtpFechaInicio.SelectedDate >= dtpFechaFin.SelectedDate)
+                        {
+                            dtpFechaInicio.Tag = "error";
+                            MessageBox.Show("La fecha de inicio debe ser menor que la fecha de fin.", "Validación de fechas", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                        else
+                        {
+                            MessageBoxResult resultado = MessageBox.Show("¿Está seguro de que desea modificar este curso?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                            if (resultado == MessageBoxResult.Yes)
+                            {
+                                try
+                                {
+                                    oCurso.Cur_Nombre = txtNombre.Text;
+                                    oCurso.Cur_Descripcion = txtDescripcion.Text;
+                                    oCurso.Cur_Cupo = Convert.ToInt32(txtCupo.Text);
+                                    oCurso.Cur_FechaInicio = dtpFechaInicio.SelectedDate.Value;
+                                    oCurso.Cur_FechaFin = dtpFechaFin.SelectedDate.Value;
+                                    oCurso.Doc_ID = Convert.ToInt32(cmbDocentes.SelectedValue);
+
+                                    TrabajarCursos.updateCurso(oCurso);
+
+                                    MessageBox.Show("Curso modificado correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                                    load_cursos();
+                                }
+                                catch (Exception ex)
+                                {
+                                    // SE LIMPIAN LOS ESTADOS PREVIOS
+                                    dtpFechaInicio.Tag = null;
+                                    dtpFechaFin.Tag = null;
+
+                                    string msg = ex.Message.ToLower(); //VARIABLE QUE GUARDA EL MENSAJE PARA SABER DONDE ACTIVAR EL BORDE ROJO DE ERROR.
+                                    if (msg.Contains("finalización"))
+                                    {
+                                        dtpFechaFin.Tag = "error";
+                                    }
+                                    MessageBox.Show(ex.Message, "Error al modificar",
+                                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                                }
+
+                            }
+                        }
+                    }
+                    
                 }
+                
             }
         }
 
@@ -302,6 +380,8 @@ namespace Vistas
         //BOTÓN DE ANULAR OPERACIÓN
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
+            dtpFechaInicio.Tag = null;
+            dtpFechaFin.Tag = null;
             clean_formulario();
             rbtnAlta.IsChecked = false;
             rbtnModificar.IsChecked = false;

@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ClasesBase;
 
 namespace Vistas
 {
@@ -22,28 +23,37 @@ namespace Vistas
         public WinPrincipal()
         {
             InitializeComponent();
-        }
+            Usuario u = Sesion.UsuarioLogueado;
 
-        //Para cerrar el menú principal y volver al login
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
-        {
-            MessageBoxResult result = MessageBox.Show(
-                "¿Está seguro que desea cerrar sesión?",
-                "Confirmación",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question
-            );
-            if (result == MessageBoxResult.Yes) 
+            if (u.Rol_ID == 1) // Administrador
             {
-                //Se crea la instancia de la ventana del login para poder visualizarla al hacer click.
-                cerrarSesionDesdeMenu = true;
-                WinWelcome login = new WinWelcome();
-                Application.Current.MainWindow = login;
-                login.Show();
+                Sistema.IsEnabled = true;
 
-                this.Close();
+                Academico.IsEnabled = false;
+                Inscripciones.IsEnabled = false;
+                Reportes.IsEnabled = false;
             }
-            
+            else if (u.Rol_ID == 2) // Docente
+            {
+                Sistema.IsEnabled = false;
+
+                Reportes.IsEnabled = true;
+                gestionDocentes.IsEnabled = true;
+
+                alumnos.Visibility = Visibility.Collapsed;
+                cursos.Visibility = Visibility.Collapsed;
+                abmDocentes.Visibility = Visibility.Collapsed;
+                Inscripciones.IsEnabled = false;
+            }
+            else if (u.Rol_ID == 3) // Recepción
+            {
+                Sistema.IsEnabled = false;
+
+                Academico.IsEnabled = true;
+                gestionDocentes.Visibility = Visibility.Collapsed;
+                Inscripciones.IsEnabled = true;
+                Reportes.IsEnabled = false;
+            }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -86,20 +96,13 @@ namespace Vistas
             this.Close();
         }
 
-        //Para abrir la ventana que muestra el listado de cursos en una grilla
+        //Para abrir la ventana que muestra la cantidad de Cursos finalizados y en curso de cada alumno
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
-            
-            
-        }
-        
-        //Para abrir la ventana de Estados de cursos
-        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
-        {
             cerrarSesionDesdeMenu = true;
-            EstadosDeCursos oEstadosDeCursos = new EstadosDeCursos();
-            Application.Current.MainWindow = oEstadosDeCursos;
-            oEstadosDeCursos.Show();
+            WinResultados oWinResultados = new WinResultados();
+            Application.Current.MainWindow = oWinResultados;
+            oWinResultados.Show();
             this.Close();
         }
 
@@ -135,14 +138,6 @@ namespace Vistas
             oWinABMAlumnos.Show();
             this.Close();
         }
-
-        //Para abrir el formulario de modificacion de alumnos
-        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
-        {
-            cerrarSesionDesdeMenu = true;
-            
-            this.Close();
-        }
         
         //Para abrir el listado de cursos
         private void MenuItem_Click_8(object sender, RoutedEventArgs e)
@@ -169,6 +164,44 @@ namespace Vistas
             WinGestionDocentes oWinGestionDocentes = new WinGestionDocentes();
             oWinGestionDocentes.Show();
             this.Close();
+        }
+
+        private void Salir_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show(
+                "¿Está seguro que desea cerrar sesión?",
+                "Confirmación",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question
+            );
+            if (result == MessageBoxResult.Yes)
+            {
+                //Se crea la instancia de la ventana del login para poder visualizarla al hacer click.
+                cerrarSesionDesdeMenu = true;
+                WinWelcome login = new WinWelcome();
+                Application.Current.MainWindow = login;
+                login.Show();
+
+                this.Close();
+            }
+        }
+
+        //Para abrir el formulario de Inscripción a cursos
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //Para abrir el formulario de Anular inscripciones
+        private void MenuItem_Click_7(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //Para abrir el formulario que administra la acreditación a cursos
+        private void MenuItem_Click_11(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -50,6 +50,12 @@ namespace ClasesBase
             set { if (alu_Email != value) { alu_Email = value; OnPropertyChanged("Alu_Email"); } }
         }
 
+        //Para mostrar en el formulario de Resultados el comboBox de alumnos
+        public string Alu_NombreCompleto
+        {
+            get { return Alu_Apellido + " " + Alu_Nombre; }
+        }
+
         public string Error
         {
             get { throw new NotImplementedException(); }

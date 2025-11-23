@@ -10,6 +10,45 @@ namespace ClasesBase
 {
     public class TrabajarUsuario
     {
+        //FUNCIÓN PARA VALIDAR USUARIOS EN LOGIN
+        public static Usuario ValidarUsuario(string nombreUsuario, string contraseña)
+        {
+            Usuario user = null;
+
+            using (SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = cnn;
+                cmd.CommandText = @"
+                SELECT usu_ID, usu_NombreUsuario, usu_Contraseña, usu_ApellidoNombre, rol_ID
+                FROM Usuario
+                WHERE usu_NombreUsuario = @usuario 
+                  AND usu_Contraseña = @pass;
+            ";
+
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@usuario", nombreUsuario);
+                cmd.Parameters.AddWithValue("@pass", contraseña);
+
+                cnn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    user = new Usuario();
+                    user.Usu_ID = Convert.ToInt32(dr["usu_ID"]);
+                    user.Usu_NombreUsuario = dr["usu_NombreUsuario"].ToString();
+                    user.Usu_Contraseña = dr["usu_Contraseña"].ToString();
+                    user.Usu_ApellidoNombre = dr["usu_ApellidoNombre"].ToString();
+                    user.Rol_ID = Convert.ToInt32(dr["rol_ID"]);
+                }
+
+                dr.Close();
+            }
+
+            return user;
+        }
+
         //Método para cargar una coleccion con los usuarios registrados.
         public static ObservableCollection<Usuario> TraerUsuarios() 
         {
@@ -47,6 +86,21 @@ namespace ClasesBase
         public static void insert_usuario(Usuario oUsuario)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
+            // VERIFICA SI EL USUARIO YA EXISTE
+            SqlCommand cmdConsulta = new SqlCommand();
+            cmdConsulta.Connection = cnn;
+            cmdConsulta.CommandText = "SELECT COUNT(*) FROM Usuario WHERE Usu_NombreUsuario = @nombreUsuario";
+            cmdConsulta.Parameters.AddWithValue("@nombreUsuario", oUsuario.Usu_NombreUsuario);
+
+            cnn.Open();
+            int existe = (int)cmdConsulta.ExecuteScalar();
+
+            if (existe > 0)
+            {
+                cnn.Close();
+                throw new Exception("Ya existe un usuario con ese nombre.");
+            }
+            //REALIZA LA INSERCION SI NO EXISTE EL USUARIO
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "INSERT INTO Usuario(Usu_NombreUsuario, Usu_Contraseña, Usu_ApellidoNombre, Rol_ID) VALUES(@nombreUsuario, @contraseña, @apellidoNombre, @rolID)";
             cmd.CommandType = CommandType.Text;
@@ -57,7 +111,6 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@apellidoNombre", oUsuario.Usu_ApellidoNombre);
             cmd.Parameters.AddWithValue("@rolID", oUsuario.Rol_ID);
 
-            cnn.Open();
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
@@ -66,6 +119,24 @@ namespace ClasesBase
         public static void updateUsuario(Usuario oUsuario)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
+            // VERIFICA SI EL USUARIO YA EXISTE
+            SqlCommand cmdConsulta = new SqlCommand();
+            cmdConsulta.Connection = cnn;
+            cmdConsulta.CommandText =
+                "SELECT COUNT(*) FROM Usuario " +
+                "WHERE Usu_NombreUsuario = @nombreUsuario AND Usu_ID <> @id"; //EXCLUYO AL USUARIO QUE ESTOY MODIFICANDO PARA EVITAR DUPLICACIONES
+
+            cmdConsulta.Parameters.AddWithValue("@nombreUsuario", oUsuario.Usu_NombreUsuario);
+            cmdConsulta.Parameters.AddWithValue("@id", oUsuario.Usu_ID);
+
+            cnn.Open();
+            int existe = (int)cmdConsulta.ExecuteScalar();
+
+            if (existe > 0)
+            {
+                cnn.Close();
+                throw new Exception("Ya existe un usuario con ese nombre.");
+            }
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = "UPDATE Usuario SET usu_NombreUsuario=@nombreUsuario, usu_Contraseña=@contraseña, usu_ApellidoNombre=@apellidoNombre, rol_ID=@rolID WHERE usu_ID=@id";
             cmd.CommandType = CommandType.Text;
@@ -77,7 +148,6 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@apellidoNombre", oUsuario.Usu_ApellidoNombre);
             cmd.Parameters.AddWithValue("@rolID", oUsuario.Rol_ID);
 
-            cnn.Open();
             cmd.ExecuteNonQuery();
         }
 

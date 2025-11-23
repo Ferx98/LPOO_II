@@ -47,6 +47,17 @@ namespace Vistas
             btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             btnCancelar.IsEnabled = false;
+
+            HabilitarCampos(false);
+        }
+
+        //PROCEDIMIENTO PARA HABILITAR LOS CAMPOS SOLO CUANDO SE SELECCIONE ALGUN RADIO BUTTON.
+        private void HabilitarCampos(bool habilitar)
+        {
+            txtNombre.IsEnabled = habilitar;
+            txtApellido.IsEnabled = habilitar;
+            txtEmail.IsEnabled = habilitar;
+            txtDNI.IsEnabled = habilitar;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -158,6 +169,7 @@ namespace Vistas
 
         private void rbtnAlta_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(true);
             btnGuardar.IsEnabled = true;
             btnCancelar.IsEnabled = true;
             btnModificar.IsEnabled = false;
@@ -167,6 +179,7 @@ namespace Vistas
 
         private void rbtnModificar_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(true);
             btnGuardar.IsEnabled = false;
             btnModificar.IsEnabled = true;
             btnCancelar.IsEnabled = true;
@@ -176,6 +189,7 @@ namespace Vistas
 
         private void rbtnEliminar_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(false);
             btnGuardar.IsEnabled = false;
             btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = true;
@@ -186,6 +200,9 @@ namespace Vistas
         //ALTA DE ALUMNOS
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
+            //SE RETIRAN LOS ESTILOS PARA EVITAR SU REPETICION
+            txtEmail.Tag = null;
+            txtDNI.Tag = null;
             bool puedeGuardar = true;
 
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
@@ -202,7 +219,18 @@ namespace Vistas
 
             if (puedeGuardar && TrabajarAlumnos.existe_dni(txtDNI.Text))
             {
+                txtDNI.Tag = "error";
                 MessageBox.Show("Ya existe un alumno con ese DNI.",
+                                "Duplicado",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
+                puedeGuardar = false;
+            }
+
+            if (puedeGuardar && TrabajarAlumnos.existe_email(txtEmail.Text)) 
+            {
+                txtEmail.Tag = "error";
+                MessageBox.Show("Ya existe un alumno con ese email.",
                                 "Duplicado",
                                 MessageBoxButton.OK,
                                 MessageBoxImage.Error);
@@ -242,6 +270,9 @@ namespace Vistas
         //MODIFICACIÓN DE ALUMNOS
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
+            //SE RETIRAN LOS ESTILOS PARA EVITAR SU REPETICION
+            txtEmail.Tag = null;
+            txtDNI.Tag = null;
             bool puedeModificar = true;
 
             if (Vista.CurrentItem == null)
@@ -259,7 +290,18 @@ namespace Vistas
 
                 if (TrabajarAlumnos.existe_dni_modificacion(txtDNI.Text, oAlumno.Alu_ID))
                 {
+                    txtDNI.Tag = "error";
                     MessageBox.Show("Ya existe otro alumno con ese DNI.",
+                                    "Duplicado",
+                                    MessageBoxButton.OK,
+                                    MessageBoxImage.Error);
+                    puedeModificar = false;
+                }
+
+                if (TrabajarAlumnos.existe_email_modificacion(txtEmail.Text, oAlumno.Alu_ID)) 
+                {
+                    txtEmail.Tag = "error";
+                    MessageBox.Show("Ya existe otro alumno con ese email.",
                                     "Duplicado",
                                     MessageBoxButton.OK,
                                     MessageBoxImage.Error);
@@ -330,6 +372,8 @@ namespace Vistas
         //BOTÓN DE ANULAR OPERACIÓN
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
+            txtEmail.Tag = null;
+            txtDNI.Tag = null;
             clean_formulario();
             // Se desmarcan los radio buttons
             rbtnAlta.IsChecked = false;

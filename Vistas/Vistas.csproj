@@ -59,8 +59,8 @@
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
     <Compile Include="ConversorDeEstados.cs" />
-    <Compile Include="EstadosDeCursos.xaml.cs">
-      <DependentUpon>EstadosDeCursos.xaml</DependentUpon>
+    <Compile Include="Ingresando.xaml.cs">
+      <DependentUpon>Ingresando.xaml</DependentUpon>
     </Compile>
     <Compile Include="WinABMAlumnos.xaml.cs">
       <DependentUpon>WinABMAlumnos.xaml</DependentUpon>
@@ -86,6 +86,9 @@
     <Compile Include="WinPrincipal.xaml.cs">
       <DependentUpon>WinPrincipal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinResultados.xaml.cs">
+      <DependentUpon>WinResultados.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinVistaPreviaUsuarios.xaml.cs">
       <DependentUpon>WinVistaPreviaUsuarios.xaml</DependentUpon>
     </Compile>
@@ -100,11 +103,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EstadosDeCursos.xaml">
+    <Page Include="EstilosMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EstilosMain.xaml">
+    <Page Include="Ingresando.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,6 +144,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WinPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinResultados.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -231,6 +238,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\GestionDocentes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Gemini_Generated_Image_isxmw1isxmw1isxm.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="audio\LOADING.wav" />
+    <Resource Include="Images\WinResultados.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

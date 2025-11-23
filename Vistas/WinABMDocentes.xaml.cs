@@ -47,6 +47,17 @@ namespace Vistas
             btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             btnCancelar.IsEnabled = false;
+
+            HabilitarCampos(false);
+        }
+
+        //PROCEDIMIENTO PARA HABILITAR LOS CAMPOS SOLO CUANDO SE SELECCIONE ALGUN RADIO BUTTON.
+        private void HabilitarCampos(bool habilitar)
+        {
+            txtNombre.IsEnabled = habilitar;
+            txtApellido.IsEnabled = habilitar;
+            txtEmail.IsEnabled = habilitar;
+            txtDNI.IsEnabled = habilitar;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -158,6 +169,7 @@ namespace Vistas
 
         private void rbtnAlta_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(true);
             btnGuardar.IsEnabled = true;
             btnCancelar.IsEnabled = true;
             btnModificar.IsEnabled = false;
@@ -167,6 +179,7 @@ namespace Vistas
 
         private void rbtnModificar_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(true);
             btnGuardar.IsEnabled = false;
             btnModificar.IsEnabled = true;
             btnCancelar.IsEnabled = true;
@@ -176,6 +189,7 @@ namespace Vistas
 
         private void rbtnEliminar_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(false);
             btnGuardar.IsEnabled = false;
             btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = true;
@@ -186,6 +200,9 @@ namespace Vistas
         //ALTA DE DOCENTES
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
+            //SE RETIRAN LOS ESTILOS PARA EVITAR SU REPETICION
+            txtDNI.Tag = null;
+            txtEmail.Tag = null;
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(txtApellido.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) ||
@@ -207,27 +224,53 @@ namespace Vistas
 
             if (resultado == MessageBoxResult.Yes)
             {
-                Docente oDocente = new Docente();
-                oDocente.Doc_Nombre = txtNombre.Text;
-                oDocente.Doc_Apellido = txtApellido.Text;
-                oDocente.Doc_Email = txtEmail.Text;
-                oDocente.Doc_DNI = txtDNI.Text;
+                try
+                {
+                    Docente oDocente = new Docente();
+                    oDocente.Doc_Nombre = txtNombre.Text;
+                    oDocente.Doc_Apellido = txtApellido.Text;
+                    oDocente.Doc_Email = txtEmail.Text;
+                    oDocente.Doc_DNI = txtDNI.Text;
 
-                TrabajarDocentes.insert_docente(oDocente);
+                    TrabajarDocentes.insert_docente(oDocente);
 
-                MessageBox.Show("Docente registrado correctamente.",
-                                "Éxito",
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Information);
+                    MessageBox.Show("Docente registrado correctamente.",
+                                    "Éxito",
+                                    MessageBoxButton.OK,
+                                    MessageBoxImage.Information);
 
-                load_docentes();
-                clean_formulario();
+                    load_docentes();
+                    clean_formulario();
+                }
+                catch (Exception ex)
+                {
+                    // SE LIMPIAN LOS ESTADOS PREVIOS
+                    txtEmail.Tag = null;
+                    txtDNI.Tag = null;
+
+                    string msg = ex.Message.ToLower(); //VARIABLE QUE GUARDA EL MENSAJE PARA SABER DONDE ACTIVAR EL BORDE ROJO DE ERROR.
+
+                    if (msg.Contains("email"))
+                    {
+                        txtEmail.Tag = "error";
+                    }
+                    else if (msg.Contains("dni"))
+                    {
+                        txtDNI.Tag = "error";
+                    }
+                    MessageBox.Show(ex.Message, "Error al registrar",
+                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                
             }
         }
 
         //MODIFICACIÓN DE DOCENTES
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
+            //SE RETIRAN LOS ESTILOS PARA EVITAR SU REPETICION
+            txtEmail.Tag = null;
+            txtDNI.Tag = null;
             if (Vista.CurrentItem == null)
             {
                 MessageBox.Show("Elija el docente que desee modificar.",
@@ -247,16 +290,39 @@ namespace Vistas
 
             if (resultado == MessageBoxResult.Yes)
             {
-                Docente oDocente = (Docente)Vista.CurrentItem;
-                oDocente.Doc_Nombre = txtNombre.Text;
-                oDocente.Doc_Apellido = txtApellido.Text;
-                oDocente.Doc_Email = txtEmail.Text;
-                oDocente.Doc_DNI = txtDNI.Text;
+                try
+                {
+                    Docente oDocente = (Docente)Vista.CurrentItem;
+                    oDocente.Doc_Nombre = txtNombre.Text;
+                    oDocente.Doc_Apellido = txtApellido.Text;
+                    oDocente.Doc_Email = txtEmail.Text;
+                    oDocente.Doc_DNI = txtDNI.Text;
 
-                TrabajarDocentes.updateDocente(oDocente);
-                load_docentes();
+                    TrabajarDocentes.updateDocente(oDocente);
+                    load_docentes();
 
-                MessageBox.Show("El docente se modifico correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("El docente se modifico correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    // SE LIMPIAN LOS ESTADOS PREVIOS
+                    txtEmail.Tag = null;
+                    txtDNI.Tag = null;
+
+                    string msg = ex.Message.ToLower(); //VARIABLE QUE GUARDA EL MENSAJE PARA SABER DONDE ACTIVAR EL BORDE ROJO DE ERROR.
+
+                    if (msg.Contains("email"))
+                    {
+                        txtEmail.Tag = "error";
+                    }
+                    else if (msg.Contains("dni"))
+                    {
+                        txtDNI.Tag = "error";
+                    }
+                    MessageBox.Show(ex.Message, "Error al modificar",
+                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                
 
             }
         }
@@ -296,6 +362,8 @@ namespace Vistas
 
         private void btnCancelar_Click(object sender, RoutedEventArgs e)
         {
+            txtEmail.Tag = null;
+            txtDNI.Tag = null;
             clean_formulario();
             // Se desmarcan los radio buttons
             rbtnAlta.IsChecked = false;

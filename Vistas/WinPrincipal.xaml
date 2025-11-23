@@ -1,10 +1,10 @@
 ﻿<Window x:Class="Vistas.WinPrincipal"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Menú Principal" Height="381" Width="535" Background="#FFB3E8E8" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
+        Title="Menú Principal" Height="381" Width="616" Background="#FFB3E8E8" Closing="Window_Closing" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Menu Height="42" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="547" FontFamily="Lune" FontSize="13" Background="#FFE8D4C4">
-            <MenuItem FontSize="14">
+        <Menu ItemContainerStyle="{StaticResource MenuItemDisabledStyle}" Height="42" HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Top" Width="605" FontFamily="Lune" FontSize="13" Background="#FFE8D4C4">
+            <MenuItem FontSize="14" x:Name="Sistema">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                         <Image Source="/Vistas;component/Images/MenuSistema.png" 
@@ -16,9 +16,8 @@
                     <MenuItem Header="ABM de Usuarios" Click="MenuItem_Click_5" />
                     <MenuItem Header="Listado de Usuarios" Click="MenuItem_Click_9" />
                 </MenuItem>
-                <MenuItem Header="Salir" Click="MenuItem_Click_1"/>
             </MenuItem>
-            <MenuItem FontSize="14">
+            <MenuItem FontSize="14" x:Name="Reportes">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Image 
@@ -26,10 +25,10 @@
                         <TextBlock Text="Reportes" Margin="5,0,0,0" VerticalAlignment="Center"/>
                     </StackPanel>
                 </MenuItem.Header>
-                <MenuItem Header="Listado de cursos" Click="MenuItem_Click" />
+                <MenuItem Name="resultados" Header="Cursos finalizados por Alumnos" Click="MenuItem_Click" />
             </MenuItem>
 
-            <MenuItem FontSize="14">
+            <MenuItem FontSize="14" x:Name="Academico">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Image 
@@ -37,27 +36,38 @@
                         <TextBlock Text="Académico" Margin="5,0,0,0" VerticalAlignment="Center"/>
                     </StackPanel>
                 </MenuItem.Header>
-                <MenuItem Header="Cursos">
-                    <MenuItem Header="Estado de cursos" Click="MenuItem_Click_6" />
+                <MenuItem Header="Cursos" x:Name="cursos">
                     <MenuItem Header="ABM de Cursos" Click="MenuItem_Click_2" />
-                    <MenuItem Header="Lista de Cursos" Click="MenuItem_Click_8" />
+                    <MenuItem Header="Listado de Cursos" Click="MenuItem_Click_8" />
                 </MenuItem>
                 <MenuItem Header="Docentes">
-                    <MenuItem Header="ABM de Docentes" Click="MenuItem_Click_3" />
-                    <MenuItem Header="Gestión de Docentes" Click="MenuItem_Click_10" />
+                    <MenuItem x:Name="abmDocentes" Header="ABM de Docentes" Click="MenuItem_Click_3" />
+                    <MenuItem x:Name="gestionDocentes" Header="Gestión de Docentes" Click="MenuItem_Click_10" />
                 </MenuItem>
-                <MenuItem Header="Alumnos">
+                <MenuItem Header="Alumnos" x:Name="alumnos">
                     <MenuItem Header="ABM de Alumnos" Click="MenuItem_Click_4" />
-                    <MenuItem Header="Modificar alumnos" Click="MenuItem_Click_7" />
                 </MenuItem>
             </MenuItem>
 
-            <MenuItem FontSize="14">
+            <MenuItem FontSize="14" x:Name="Inscripciones">
                 <MenuItem.Header>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <Image 
                    Width="40" Height="40" Stretch="Uniform" Source="/Vistas;component/Images/MenuInscripciones.png" />
                         <TextBlock Text="Inscripciones" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </MenuItem.Header>
+                <MenuItem Header="Realizar inscripción a cursos" Click="MenuItem_Click_1" />
+                <MenuItem Header="Anular inscripciones" Click="MenuItem_Click_7" />
+                <MenuItem Header="Administrar acreditación a cursos" Click="MenuItem_Click_11" />
+            </MenuItem>
+
+            <MenuItem FontSize="14" x:Name="Salir" Click="Salir_Click">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Image 
+                   Width="40" Height="40" Stretch="Uniform" Source="/Vistas;component/Images/salir.png" />
+                        <TextBlock Text="Salir" Margin="5,0,0,0" VerticalAlignment="Center"/>
                     </StackPanel>
                 </MenuItem.Header>
             </MenuItem>

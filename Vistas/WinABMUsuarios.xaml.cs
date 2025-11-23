@@ -59,6 +59,17 @@ namespace Vistas
             btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             btnCancelar.IsEnabled = false;
+
+            HabilitarCampos(false);
+        }
+
+        //PROCEDIMIENTO PARA HABILITAR LOS CAMPOS SOLO CUANDO SE SELECCIONE ALGUN RADIO BUTTON.
+        private void HabilitarCampos(bool habilitar)
+        {
+            txtNombreUsuario.IsEnabled = habilitar;
+            txtContraseña.IsEnabled = habilitar;
+            txtApellidoNombre.IsEnabled = habilitar;
+            cmbRoles.IsEnabled = habilitar;
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -135,6 +146,7 @@ namespace Vistas
         //Metodo para guardar un nuevo usuario
         private void btnGuardar_Click(object sender, RoutedEventArgs e)
         {
+            txtNombreUsuario.Tag = null;
             if (string.IsNullOrWhiteSpace(txtNombreUsuario.Text) ||
                 string.IsNullOrWhiteSpace(txtContraseña.Password) ||
                 string.IsNullOrWhiteSpace(txtApellidoNombre.Text) ||
@@ -156,27 +168,38 @@ namespace Vistas
 
             if (resultado == MessageBoxResult.Yes)
             {
-                Usuario oUsuario = new Usuario();
-                oUsuario.Usu_NombreUsuario = txtNombreUsuario.Text;
-                oUsuario.Usu_Contraseña = txtContraseña.Password;
-                oUsuario.Usu_ApellidoNombre = txtApellidoNombre.Text;
-                oUsuario.Rol_ID = (int)cmbRoles.SelectedValue;
+                try
+                {
+                    Usuario oUsuario = new Usuario();
+                    oUsuario.Usu_NombreUsuario = txtNombreUsuario.Text;
+                    oUsuario.Usu_Contraseña = txtContraseña.Password;
+                    oUsuario.Usu_ApellidoNombre = txtApellidoNombre.Text;
+                    oUsuario.Rol_ID = (int)cmbRoles.SelectedValue;
 
-                TrabajarUsuario.insert_usuario(oUsuario);
+                    TrabajarUsuario.insert_usuario(oUsuario);
 
-                MessageBox.Show("Usuario registrado correctamente.",
-                                "Éxito",
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Information);
+                    MessageBox.Show("Usuario registrado correctamente.",
+                                    "Éxito",
+                                    MessageBoxButton.OK,
+                                    MessageBoxImage.Information);
 
-                load_usuarios();
-                clean_formulario();
+                    load_usuarios();
+                    clean_formulario();
+                }
+                catch (Exception ex)
+                {
+                    txtNombreUsuario.Tag = "error";
+                    MessageBox.Show(ex.Message, "Error al registrar",
+                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+                
             }
         }
 
         //metodo para modificar un usuario
         private void btnModificar_Click(object sender, RoutedEventArgs e)
         {
+            txtNombreUsuario.Tag = null;
             if (Vista.CurrentItem == null)
             {
                 MessageBox.Show("Seleccione el usuario que desee modificar.",
@@ -196,17 +219,25 @@ namespace Vistas
 
             if (resultado == MessageBoxResult.Yes)
             {
-                Usuario oUsuario = (Usuario)Vista.CurrentItem;
-                oUsuario.Usu_NombreUsuario = txtNombreUsuario.Text;
-                oUsuario.Usu_Contraseña = txtContraseña.Password;
-                oUsuario.Usu_ApellidoNombre = txtApellidoNombre.Text;
-                oUsuario.Rol_ID = Convert.ToInt32(cmbRoles.SelectedValue);
+                try
+                {
+                    Usuario oUsuario = (Usuario)Vista.CurrentItem;
+                    oUsuario.Usu_NombreUsuario = txtNombreUsuario.Text;
+                    oUsuario.Usu_Contraseña = txtContraseña.Password;
+                    oUsuario.Usu_ApellidoNombre = txtApellidoNombre.Text;
+                    oUsuario.Rol_ID = Convert.ToInt32(cmbRoles.SelectedValue);
 
-                TrabajarUsuario.updateUsuario(oUsuario);
-                load_usuarios();
+                    TrabajarUsuario.updateUsuario(oUsuario);
+                    load_usuarios();
 
-                MessageBox.Show("El usuario se modifico correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
-                
+                    MessageBox.Show("El usuario se modifico correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    txtNombreUsuario.Tag = "error";
+                    MessageBox.Show(ex.Message, "Error al modificar",
+                            MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
             }
         }
 
@@ -255,6 +286,8 @@ namespace Vistas
             btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
             btnCancelar.IsEnabled = false;
+
+            txtNombreUsuario.Tag = null;
         }
 
         //metodo para limpiar todo el formulario
@@ -278,28 +311,34 @@ namespace Vistas
 
         private void rbtnAlta_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(true);
             btnGuardar.IsEnabled = true;
             btnCancelar.IsEnabled = true;
             btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = false;
+            txtNombreUsuario.Tag = null;
             clean_formulario();
         }
 
         private void rbtnModificar_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(true);
             btnGuardar.IsEnabled = false;
             btnModificar.IsEnabled = true;
             btnCancelar.IsEnabled = true;
             btnEliminar.IsEnabled = false;
+            txtNombreUsuario.Tag = null;
             CargarDatosUsuarioActual();
         }
 
         private void rbtnEliminar_Checked(object sender, RoutedEventArgs e)
         {
+            HabilitarCampos(false);
             btnGuardar.IsEnabled = false;
             btnModificar.IsEnabled = false;
             btnEliminar.IsEnabled = true;
             btnCancelar.IsEnabled = true;
+            txtNombreUsuario.Tag = null;
             CargarDatosUsuarioActual();
         }
 

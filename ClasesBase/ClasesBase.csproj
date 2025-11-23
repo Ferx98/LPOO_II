@@ -51,6 +51,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>institutoDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="institutoDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>institutoDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -58,10 +63,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Roles.cs" />
+    <Compile Include="Sesion.cs" />
     <Compile Include="TrabajarAlumnos.cs" />
     <Compile Include="TrabajarCursos.cs" />
     <Compile Include="TrabajarDocentes.cs" />
     <Compile Include="TrabajarEstados.cs" />
+    <Compile Include="TrabajarInscripciones.cs" />
     <Compile Include="TrabajarUsuario.cs" />
     <Compile Include="Usuario.cs" />
   </ItemGroup>
@@ -79,6 +86,17 @@
     </None>
     <None Include="institutoDataSet.xss">
       <DependentUpon>institutoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="institutoDataSet1.xsc">
+      <DependentUpon>institutoDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="institutoDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>institutoDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="institutoDataSet1.xss">
+      <DependentUpon>institutoDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

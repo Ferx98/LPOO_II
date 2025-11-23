@@ -52,6 +52,16 @@ namespace ClasesBase
                 //Se asginan estos campos para mostrar en el ABM Cursos los nombres del docente y del estado.
                 oCurso.DocenteNombreCompleto = dr["Docente"].ToString();
                 oCurso.EstadoNombre = dr["Estado"].ToString();
+                if (oCurso.Cur_FechaFin < DateTime.Now && oCurso.Est_ID != 3)
+                {
+                    // Cambiar en BD
+                    ActualizarEstadoFinalizado(oCurso.Cur_ID);
+
+                    // Cambiar en el objeto
+                    oCurso.Est_ID = 3;
+                    oCurso.EstadoNombre = "finalizado";
+                }
+
                 listaCursos.Add(oCurso);
             }
             dr.Close();
@@ -63,19 +73,21 @@ namespace ClasesBase
         // INSERTAR NUEVO CURSO
         public static int insert_curso(Curso curso)
         {
-            // Validación de fechas
-            if (curso.Cur_FechaInicio >= curso.Cur_FechaFin)
+            //Se establece el Estado según la fecha
+            if (curso.Cur_FechaInicio > DateTime.Now)
             {
-                throw new Exception("La fecha de inicio debe ser anterior a la fecha de fin.");
+                curso.Est_ID = 1; // PROGRAMADO
+            }
+            else if (curso.Cur_FechaInicio <= DateTime.Now && curso.Cur_FechaFin >= DateTime.Now)
+            {
+                curso.Est_ID = 2; // EN CURSO
             }
 
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
             SqlCommand cmd = new SqlCommand();
-
             cmd.CommandText = @"
             INSERT INTO Curso (cur_Nombre, cur_Descripcion, cur_Cupo, cur_FechaInicio, cur_FechaFin, doc_ID, est_ID)
-            VALUES (@NOMBRE, @DESCRIPCION, @CUPO, @FECHAINICIO, @FECHAFIN, @DOCID, @ESTID)
-        ";
+            VALUES (@NOMBRE, @DESCRIPCION, @CUPO, @FECHAINICIO, @FECHAFIN, @DOCID, @ESTID)";
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -101,11 +113,6 @@ namespace ClasesBase
         // MODIFICAR CURSO EXISTENTE
         public static void updateCurso(Curso curso)
         {
-            if (curso.Cur_FechaInicio >= curso.Cur_FechaFin)
-            {
-                throw new Exception("La fecha de inicio debe ser anterior a la fecha de fin.");
-            }
-
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = @"
@@ -179,6 +186,11 @@ namespace ClasesBase
                 oCurso.Cur_FechaInicio = Convert.ToDateTime(dr["cur_FechaInicio"].ToString());
                 oCurso.Cur_FechaFin = Convert.ToDateTime(dr["cur_FechaFin"].ToString());
                 oCurso.EstadoNombre = dr["est_Nombre"].ToString();
+                if (oCurso.Cur_FechaFin < DateTime.Now && oCurso.EstadoNombre != "finalizado")
+                {
+                    ActualizarEstadoFinalizado(oCurso.Cur_ID);
+                    oCurso.EstadoNombre = "finalizado";
+                }
                 listaCursos.Add(oCurso);
             }
             dr.Close();
@@ -201,6 +213,21 @@ namespace ClasesBase
             cnn.Close();
 
             curso.EstadoNombre = nuevoEstado;
+        }
+        // PROCEDIMIENTO PARA ACTUALIZAR AUTOMATICAMENTE EL ESTADO DEL CURSO CUANDO SE CUMPLE SU FECHA DE FINALIZACIÓN.
+        public static void ActualizarEstadoFinalizado(int idCurso)
+        {
+            SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
+            SqlCommand cmd = new SqlCommand(@"
+                UPDATE Curso 
+                SET est_ID = 3   -- ID del estado Finalizado
+                WHERE cur_ID = @id", cnn);
+
+            cmd.Parameters.AddWithValue("@id", idCurso);
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+            cnn.Close();
         }
     }
 }

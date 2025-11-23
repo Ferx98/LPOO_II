@@ -10,7 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using System.ComponentModel;
 namespace Vistas
 {
     /// <summary>
@@ -18,33 +18,35 @@ namespace Vistas
     /// </summary>
     public partial class WinVistaPreviaUsuarios : Window
     {
+        private ICollectionView vistaUsuarios;
+
         public WinVistaPreviaUsuarios()
         {
             InitializeComponent();
         }
 
-        private void btnImprimir_Click(object sender, RoutedEventArgs e)
+        public WinVistaPreviaUsuarios(ICollectionView vistaFiltrada)
         {
-
+            InitializeComponent();
+            this.vistaUsuarios = vistaFiltrada;
+            this.Loaded += new RoutedEventHandler(WinVistaPreviaUsuarios_Loaded);
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        void WinVistaPreviaUsuarios_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult resultado = MessageBox.Show(
-                "¿Está seguro de que desea regresar al Listado de Usuarios?",
-                "Exit",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question
-            );
-            if (resultado == MessageBoxResult.Yes)
+            //Asignamos la lista que recibimos en el constructor al ItemsSource del ListView que nombramos 'listaUsuariosPreview' en el XAML.
+            if (this.vistaUsuarios != null)
             {
-                WinListaUsuarios lista = new WinListaUsuarios();
-                lista.Show();
+                listaUsuariosPreview.ItemsSource = this.vistaUsuarios;
             }
-            else
+        }
+
+        private void btnImprimir_Click(object sender, RoutedEventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == true)
             {
-                //Se cancela el cierre si se elige "No"
-                e.Cancel = true;
+                printDialog.PrintDocument(((IDocumentPaginatorSource)DocUsuarios).DocumentPaginator, "Imprimir");
             }
         }
 
