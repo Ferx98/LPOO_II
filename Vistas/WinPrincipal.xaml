@@ -58,8 +58,9 @@
                     </StackPanel>
                 </MenuItem.Header>
                 <MenuItem Header="Realizar inscripción a cursos" Click="MenuItem_Click_1" />
+                <MenuItem Header="Listado de inscriptos" Click="MenuItem_Click_6" />
                 <MenuItem Header="Anular inscripciones" Click="MenuItem_Click_7" />
-                <MenuItem Header="Administrar acreditación a cursos" Click="MenuItem_Click_11" />
+                <MenuItem Header="Acreditacion de Cursos" Click="btnAcreditacion_Click" />
             </MenuItem>
 
             <MenuItem FontSize="14" x:Name="Salir" Click="Salir_Click">
@@ -72,5 +73,8 @@
                 </MenuItem.Header>
             </MenuItem>
         </Menu>
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="172,64,0,0" Name="usuLogueado" VerticalAlignment="Top" Width="120" FontFamily="Times New Roman" FontSize="18" Foreground="#FFDE0B6F" BorderThickness="0" Background="{x:Null}" FontWeight="ExtraBold" FontStyle="Italic" />
+        <Label Content="Usuario Conectado:" Height="28" HorizontalAlignment="Left" Margin="12,59,0,0" Name="label1" VerticalAlignment="Top" FontFamily="Times New Roman" FontSize="18" Foreground="#FF9A23F5" FontWeight="SemiBold" />
+        <Calendar Height="170" HorizontalAlignment="Left" Margin="218,134,0,0" Name="calendar1" VerticalAlignment="Top" Width="180" SelectionMode="SingleDate" Foreground="#FF2C54D8" FontWeight="SemiBold" FontFamily="Arial" FontSize="14" FirstDayOfWeek="Sunday" DisplayMode="Month" BorderBrush="#FFD114DE" Background="#FFF2F2E2" Focusable="True" IsEnabled="True" />
     </Grid>
 </Window>

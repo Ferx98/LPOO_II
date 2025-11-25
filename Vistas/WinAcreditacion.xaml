@@ -1,0 +1,96 @@
+﻿<Window x:Class="Vistas.WinAcreditacion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Acreditación de Cursos" Height="500" Width="870"
+        WindowStartupLocation="CenterScreen"
+        Background="#F4F4F4">
+    <Window.Resources>
+        <Style TargetType="GroupBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="BorderBrush" Value="#CCCCCC"/>
+            <Setter Property="HeaderTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" FontWeight="Bold" Foreground="#333333"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#3B5998">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="/Vistas;component/Images/MenuReportes.png" 
+                       Margin="10,0,0,10" Height="60" HorizontalAlignment="Left" Width="70" Grid.Column="1" VerticalAlignment="Bottom" />
+
+                <TextBlock Grid.Column="1" Text="ACREDITACIÓN DE CURSOS" 
+                           VerticalAlignment="Center" HorizontalAlignment="Right"
+                           Foreground="White" FontSize="24" FontWeight="Bold" Margin="0,0,20,0"
+                           Effect="{DynamicResource {x:Static SystemParameters.DropShadow}}"/>
+            </Grid>
+        </Border>
+
+        <GroupBox Grid.Row="1" Header="Búsqueda de Alumno" Margin="10,10,10,0" Background="White">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <Label Content="DNI del Alumno:" VerticalAlignment="Center" FontSize="14"/>
+                <TextBox x:Name="txtDNI" Width="200" Height="25" Margin="5,0" 
+                         VerticalContentAlignment="Center" FontSize="14" BorderBrush="Gray"/>
+
+                <Button x:Name="btnBuscar" Content="Buscar Cursos" Width="120" Height="30" Margin="15,0,0,0"
+                        Click="btnBuscar_Click" Cursor="Hand" Background="#DDDDDD">
+                </Button>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Grid.Row="2" Header="Cursos Inscriptos" Margin="10" Background="White">
+            <ListView x:Name="lsvInscripciones" BorderThickness="0" FontSize="13" Margin="5">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Curso" DisplayMemberBinding="{Binding CursoNombre}" Width="250"/>
+                        <GridViewColumn Header="Docente" DisplayMemberBinding="{Binding DocenteNombre}" Width="180"/>
+                        <GridViewColumn Header="Fin de Cursada" DisplayMemberBinding="{Binding CursoFechaFin, StringFormat=d}" Width="120"/>
+
+                        <GridViewColumn Header="Estado Inscrip." DisplayMemberBinding="{Binding DescripcionEstadoInscripcion}" Width="120"/>
+                        <GridViewColumn Header="Estado Curso" DisplayMemberBinding="{Binding DescripcionEstadoCurso}" Width="120"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </GroupBox>
+
+        <Border Grid.Row="3" Background="#E0E0E0" BorderBrush="Gray" BorderThickness="0,1,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+
+                <Button x:Name="btnAtras" 
+                        Style="{StaticResource btn_plantilla_atras}" 
+                        Content="Atrás" 
+                        Height="35" 
+                        Width="100" 
+                        Margin="0,0,20,0" 
+                        Click="btnAtras_Click" 
+                        Cursor="Hand"/>
+
+                <Button x:Name="btnAcreditar"
+                        Style="{StaticResource ResourceKey=btn_plantilla_registrar}" 
+                        Content="Acreditar" 
+                        Height="35"  
+                        Width="180" 
+                        Click="btnAcreditar_Click"
+                        Cursor="Hand"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

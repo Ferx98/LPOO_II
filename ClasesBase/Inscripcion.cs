@@ -46,5 +46,12 @@ namespace ClasesBase
         public string CursoNombre { get; set; }
         public DateTime CursoFechaFin { get; set; }
         public string DocenteNombre { get; set; }
+        
+        //PROPIEDAD PARA VALIDAR SI EL CURSO ESTA "en_Curso" PARA SEGUIR EL PROCESO DE ACREDITACION
+        public int EstadoCurso { get; set; }
+        
+        //PROPIEDADES PARA MOSTRAR LA DESCRIPCION DE CADA ESTADO EN LA GRILLA
+        public string DescripcionEstadoInscripcion { get; set; } // Ejemplo"Confirmado"
+        public string DescripcionEstadoCurso { get; set; }       // Ejemplo "En Curso"
     }
 }

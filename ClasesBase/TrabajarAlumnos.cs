@@ -79,7 +79,7 @@ namespace ClasesBase
         }
 
         //ESTA FUNCIÓN CONTROLA QUE NO HAYA EMAIL REPETIDOS AL MOMENTO DE QUERER DAR DE ALTA
-        public static bool existe_email(string email) 
+        public static bool existe_email(string email)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
             SqlCommand cmd = new SqlCommand();
@@ -98,7 +98,7 @@ namespace ClasesBase
         }
 
         //ESTA FUNCIÓN CONTROLA QUE NO HAYA EMAIL REPETIDOS AL MOMENTO DE MODIFICAR LOS DATOS
-        public static bool existe_email_modificacion(string email, int id) 
+        public static bool existe_email_modificacion(string email, int id)
         {
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
             SqlCommand cmd = new SqlCommand();
@@ -178,6 +178,35 @@ namespace ClasesBase
 
             cnn.Open();
             cmd.ExecuteNonQuery();
+        }
+
+        public static Alumno TraerAlumnoPorDNI(string dni)
+        {
+            Alumno alu = null;
+
+            using (SqlConnection cnn = new SqlConnection(Properties.Settings.Default.institutoConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(@"
+            SELECT alu_ID, alu_Nombre, alu_Apellido, alu_DNI
+            FROM Alumno
+            WHERE alu_DNI = @dni", cnn);
+
+                cmd.Parameters.AddWithValue("@dni", dni);
+
+                cnn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    alu = new Alumno();
+                    alu.Alu_ID = Convert.ToInt32(dr["alu_ID"]);
+                    alu.Alu_Nombre = dr["alu_Nombre"].ToString();
+                    alu.Alu_Apellido = dr["alu_Apellido"].ToString();
+                    alu.Alu_DNI = dr["alu_DNI"].ToString();
+                }
+            }
+
+            return alu;
         }
     }
 }

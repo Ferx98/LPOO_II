@@ -74,11 +74,23 @@
     <Compile Include="WinABMUsuarios.xaml.cs">
       <DependentUpon>WinABMUsuarios.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinAcreditacion.xaml.cs">
+      <DependentUpon>WinAcreditacion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinAnularInscripcion.xaml.cs">
+      <DependentUpon>WinAnularInscripcion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinGestionDocentes.xaml.cs">
       <DependentUpon>WinGestionDocentes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WinInscripcionCursos.xaml.cs">
+      <DependentUpon>WinInscripcionCursos.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WinListaCursos.xaml.cs">
       <DependentUpon>WinListaCursos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WinListaInscriptos.xaml.cs">
+      <DependentUpon>WinListaInscriptos.xaml</DependentUpon>
     </Compile>
     <Compile Include="WinListaUsuarios.xaml.cs">
       <DependentUpon>WinListaUsuarios.xaml</DependentUpon>
@@ -131,11 +143,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WinAcreditacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinAnularInscripcion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WinGestionDocentes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="WinInscripcionCursos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WinListaCursos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WinListaInscriptos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -189,19 +189,45 @@ namespace Vistas
         //Para abrir el formulario de Inscripción a cursos
         private void MenuItem_Click_1(object sender, RoutedEventArgs e)
         {
-
+            cerrarSesionDesdeMenu = true;
+            WinInscripcionCursos oWinInscripcionCursos = new WinInscripcionCursos();
+            oWinInscripcionCursos.Show();
+            this.Close();
         }
 
         //Para abrir el formulario de Anular inscripciones
         private void MenuItem_Click_7(object sender, RoutedEventArgs e)
         {
+            cerrarSesionDesdeMenu = true;
+            WinAnularInscripcion oWinAnularInscripcion = new WinAnularInscripcion();
+            oWinAnularInscripcion.Show();
+            this.Close();
+        }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (Sesion.UsuarioLogueado != null)
+            {
+                usuLogueado.Text = Sesion.UsuarioLogueado.Usu_NombreUsuario;
+                usuLogueado.IsEnabled = false;
+            }
         }
 
         //Para abrir el formulario que administra la acreditación a cursos
-        private void MenuItem_Click_11(object sender, RoutedEventArgs e)
+        private void btnAcreditacion_Click(object sender, RoutedEventArgs e)
         {
+            cerrarSesionDesdeMenu = true;
+            WinAcreditacion oWinAcreditacion = new WinAcreditacion();
+            oWinAcreditacion.Show();
+            this.Close();
+        }
 
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+            cerrarSesionDesdeMenu = true;
+            WinListaInscriptos oWinListaInscriptos = new WinListaInscriptos();
+            oWinListaInscriptos.Show();
+            this.Close();
         }
     }
 }

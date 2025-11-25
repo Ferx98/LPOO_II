@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TPFINAL - GRUPO02\lpoo2-grupo-02\Vistas\obj\x86\Debug\
 Vistas
 none
 false
 DEBUG;TRACE
-C:\Users\juan_\OneDrive\Escritorio\Prueba de TPS\TP5 parte de Florencia\TP5- GRUPO02\lpoo2-grupo-02\Vistas\App.xaml
-15-1822563906
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TPFINAL - GRUPO02\lpoo2-grupo-02\Vistas\App.xaml
+19-279924161
 12098051726
-181753495277
-13-992520882
-ControlUsuario\Login.xaml;EstilosMain.xaml;Ingresando.xaml;PlantillaMain.xaml;WinABMAlumnos.xaml;WinABMCursos.xaml;WinABMDocentes.xaml;WinABMUsuarios.xaml;WinGestionDocentes.xaml;WinListaCursos.xaml;WinListaUsuarios.xaml;WinPrincipal.xaml;WinResultados.xaml;WinVistaPreviaUsuarios.xaml;WinWelcome.xaml;
+221125385709
+131887916399
+ControlUsuario\Login.xaml;EstilosMain.xaml;Ingresando.xaml;PlantillaMain.xaml;WinABMAlumnos.xaml;WinABMCursos.xaml;WinABMDocentes.xaml;WinABMUsuarios.xaml;WinAcreditacion.xaml;WinAnularInscripcion.xaml;WinGestionDocentes.xaml;WinInscripcionCursos.xaml;WinListaCursos.xaml;WinListaInscriptos.xaml;WinListaUsuarios.xaml;WinPrincipal.xaml;WinResultados.xaml;WinVistaPreviaUsuarios.xaml;WinWelcome.xaml;
 
 False
 

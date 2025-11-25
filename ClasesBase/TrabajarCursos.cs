@@ -71,7 +71,7 @@ namespace ClasesBase
         }
 
         // INSERTAR NUEVO CURSO
-        public static int insert_curso(Curso curso)
+        public static void insert_curso(Curso curso)
         {
             //Se establece el Estado según la fecha
             if (curso.Cur_FechaInicio > DateTime.Now)
@@ -101,18 +101,22 @@ namespace ClasesBase
 
             cnn.Open();
             cmd.ExecuteNonQuery();
-
-            // Recupera el último ID insertado
-            cmd.CommandText = "SELECT TOP 1 cur_ID FROM Curso ORDER BY cur_ID DESC";
-            int newId = Convert.ToInt32(cmd.ExecuteScalar());
             cnn.Close();
-
-            return newId;
         }
 
         // MODIFICAR CURSO EXISTENTE
         public static void updateCurso(Curso curso)
         {
+            DateTime hoy = DateTime.Today; //VARIABLE PARA CONTROLAR ACTUALIZACIÓN DE ESTADO DEL CURSOS
+            string nuevoEstado; //VARIABLE CON LA QUE ACTUALIZAREMOS EL ESTADO
+            if (curso.Cur_FechaInicio.Date == hoy)
+            {
+                nuevoEstado = "en_curso";
+            }
+            else
+            {
+                nuevoEstado = "programado";
+            }
             SqlConnection cnn = new SqlConnection(ClasesBase.Properties.Settings.Default.institutoConnectionString);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = @"
@@ -123,9 +127,9 @@ namespace ClasesBase
                 cur_FechaInicio=@FECHAINICIO, 
                 cur_FechaFin=@FECHAFIN, 
                 doc_ID=@DOCID, 
-                est_ID=@ESTID
-            WHERE cur_ID=@ID
-        ";
+                est_ID=(SELECT est_ID FROM Estado WHERE est_Nombre=@NuevoEstado)
+            WHERE cur_ID=@ID";
+            //CON EL SELECT EST_ID SE TRAE EL ID DEL ESTADO QUE CONCUERDE CON EL VALOR DE NUEVO ESTADO PARA ASIGNAR ESE ID EN EL ESTADO DEL CURSO.
             cmd.CommandType = CommandType.Text;
             cmd.Connection = cnn;
 
@@ -137,6 +141,7 @@ namespace ClasesBase
             cmd.Parameters.AddWithValue("@FECHAFIN", curso.Cur_FechaFin);
             cmd.Parameters.AddWithValue("@DOCID", curso.Doc_ID);
             cmd.Parameters.AddWithValue("@ESTID", curso.Est_ID);
+            cmd.Parameters.AddWithValue("@NuevoEstado", nuevoEstado);
 
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -229,5 +234,91 @@ namespace ClasesBase
             cmd.ExecuteNonQuery();
             cnn.Close();
         }
+
+        public static bool CursoProgramado(int curId)
+        {
+            bool programado = false;
+
+            using (SqlConnection cnn = new SqlConnection(Properties.Settings.Default.institutoConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = "SELECT est_ID FROM Curso WHERE cur_ID=@id";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = cnn;
+
+                cmd.Parameters.AddWithValue("@id", curId);
+
+                cnn.Open();
+                int estado = Convert.ToInt32(cmd.ExecuteScalar());
+
+                programado = (estado == 1); // 1 = Programado
+            }
+
+            return programado;
+        }
+
+        public static void DisminuirCupo(int cursoId)
+        {
+            using (SqlConnection cnn = new SqlConnection(Properties.Settings.Default.institutoConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandText = @"
+            UPDATE Curso
+            SET cur_Cupo = cur_Cupo - 1
+            WHERE cur_ID = @curID
+              AND cur_Cupo > 0";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = cnn;
+
+                cmd.Parameters.AddWithValue("@curID", cursoId);
+
+                cnn.Open();
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static ObservableCollection<Curso> TraerCursosProgramados()
+        {
+            ObservableCollection<Curso> lista = new ObservableCollection<Curso>();
+
+            using (SqlConnection cnn = new SqlConnection(Properties.Settings.Default.institutoConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand(@"
+            SELECT  c.cur_ID,
+                    c.cur_Nombre,
+                    c.cur_Descripcion,
+                    c.cur_Cupo,
+                    c.cur_FechaInicio,
+                    c.cur_FechaFin,
+                    c.doc_ID,
+                    c.est_ID,
+                    (d.doc_Apellido + ', ' + d.doc_Nombre) AS Docente
+            FROM Curso c
+            INNER JOIN Docente d ON c.doc_ID = d.doc_ID
+            WHERE est_ID = 1   -- PROGRAMADO
+        ", cnn);
+
+                cnn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    Curso oCurso = new Curso();
+                    oCurso.Cur_ID = Convert.ToInt32(dr["cur_ID"]);
+                    oCurso.Cur_Nombre = dr["cur_Nombre"].ToString();
+                    oCurso.Cur_Descripcion = dr["cur_Descripcion"].ToString();
+                    oCurso.Cur_Cupo = Convert.ToInt32(dr["cur_Cupo"]);
+                    oCurso.Cur_FechaInicio = Convert.ToDateTime(dr["cur_FechaInicio"]);
+                    oCurso.Cur_FechaFin = Convert.ToDateTime(dr["cur_FechaFin"]);
+                    oCurso.Doc_ID = Convert.ToInt32(dr["doc_ID"]);
+                    oCurso.DocenteNombreCompleto = dr["Docente"].ToString();
+
+                    lista.Add(oCurso);
+                }
+            }
+
+            return lista;
+        }
+
     }
 }
