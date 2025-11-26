@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
 using ClasesBase;
 using System.Data;
 
@@ -23,89 +24,76 @@ namespace Vistas
         public WinAnularInscripcion()
         {
             InitializeComponent();
-            CargarDNIAlumnos();
+            CargarDNIs();
         }
 
+        // Carga inicial del Combo
+        private void CargarDNIs()
+        {
+            // Usamos el nuevo método que devuelve Colección de Strings
+            cmbDNIAlumnos.ItemsSource = TrabajarInscripciones.TraerDNIAlumnosConInscripcionActiva();
+        }
+
+        // Cuando se elige un DNI
         private void cmbDNIAlumnos_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (cmbDNIAlumnos.SelectedValue == null)
-                return;
-
-            string dni = cmbDNIAlumnos.SelectedValue.ToString();
-
-            var tabla = TrabajarInscripciones.TraerInscripcionesActivasPorAlumno(dni);
-
-            if (tabla.Rows.Count == 0)
+            if (cmbDNIAlumnos.SelectedItem != null)
             {
-                listCursos.ItemsSource = null;
-                MessageBox.Show("Este alumno no tiene inscripciones activas.", "Aviso",
-                                 MessageBoxButton.OK, MessageBoxImage.Information);
-                return;
-            }
+                string dni = cmbDNIAlumnos.SelectedItem.ToString();
 
-            listCursos.ItemsSource = tabla.DefaultView;
-        }
-
-        private void CargarDNIAlumnos()
-        {
-            cmbDNIAlumnos.ItemsSource = TrabajarInscripciones.TraerDNIAlumnosInscriptos().DefaultView;
-        }
-
-        private void rdbAnular_Checked(object sender, RoutedEventArgs e)
-        {
-            if (listCursos.SelectedItem == null)
-            {
-                MessageBox.Show("Seleccione una inscripción.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
-            }
-
-            DataRowView fila = listCursos.SelectedItem as DataRowView;
-
-            int insID = Convert.ToInt32(fila["ins_ID"]);
-            int cursoID = Convert.ToInt32(fila["cur_ID"]);
-
-            MessageBoxResult result = MessageBox.Show("¿Desea anular la inscripción seleccionada?",
-                                                 "Confirmación",
-                                                 MessageBoxButton.YesNo,
-                                                 MessageBoxImage.Question);
-
-            if (result == MessageBoxResult.Yes)
-            {
-                // Cambia el estado del alumno a CANCELADO
-                TrabajarInscripciones.AnularInscripcion(insID);
-
-                // Devuelve al curso un cupo
-                TrabajarInscripciones.AumentarCupoCurso(cursoID);
-
-                MessageBox.Show("Inscripción anulada con éxito.", "OK", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                CargarDNIAlumnos();
-
-                // Vacia la grilla
-                listCursos.ItemsSource = null;
-
-                //se encarga de desmarcar el RadioButton
-                rdbAnular.IsChecked = false;
-
-            }
-        }
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            MessageBoxResult resultado = MessageBox.Show(
-                "¿Está seguro de que desea regresar al menú principal?",
-                "Exit",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question
-            );
-            if (resultado == MessageBoxResult.Yes)
-            {
-
-                WinPrincipal menu = new WinPrincipal();
-                menu.Show();
+                // Cargamos la lista
+                listCursos.ItemsSource = TrabajarInscripciones.TraerInscripcionesActivasPorDNI(dni);
             }
             else
             {
-                //Se cancela el cierre si se elige "No"
-                e.Cancel = true;
+                listCursos.ItemsSource = null;
+            }
+        }
+
+        // Botón Anular
+        private void btnAnular_Click(object sender, RoutedEventArgs e)
+        {
+            // Validar Selección
+            if (listCursos.SelectedItem == null)
+            {
+                MessageBox.Show("Por favor, seleccione una inscripción de la lista para anular.",
+                                "Selección requerida", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            Inscripcion inscripcion = (Inscripcion)listCursos.SelectedItem;
+
+            //Confirmacion
+            MessageBoxResult result = MessageBox.Show(
+                "¿Está seguro que desea ANULAR la inscripción al curso: " + inscripcion.CursoNombre + "?\n" +
+                "Esta acción liberará un cupo.",
+                "Confirmar Anulación",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    // 4. Ejecutar Anulación
+                    TrabajarInscripciones.AnularInscripcion(inscripcion.Ins_ID);
+
+                    // 5. Devolver Cupo (Importante según teoría)
+                    TrabajarInscripciones.AumentarCupoCurso(inscripcion.Cur_ID);
+
+                    MessageBox.Show("Inscripción anulada correctamente.", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    // Recargamr la grilla del alumno actual
+                    string dniActual = cmbDNIAlumnos.SelectedItem.ToString();
+                    listCursos.ItemsSource = TrabajarInscripciones.TraerInscripcionesActivasPorDNI(dniActual);
+
+                    //Refrescar combo
+                    CargarDNIs(); 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al anular: " + ex.Message);
+                }
             }
         }
 
@@ -114,9 +102,24 @@ namespace Vistas
             this.Close();
         }
 
-        private void listCursos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            rdbAnular.IsChecked = false;
+            // Tu lógica de volver al menú...
+            MessageBoxResult resultado = MessageBox.Show(
+                "¿Está seguro de que desea regresar al menú principal?",
+                "Exit",
+                MessageBoxButton.YesNo,
+                MessageBoxImage.Question);
+
+            if (resultado == MessageBoxResult.Yes)
+            {
+                WinPrincipal menu = new WinPrincipal();
+                menu.Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

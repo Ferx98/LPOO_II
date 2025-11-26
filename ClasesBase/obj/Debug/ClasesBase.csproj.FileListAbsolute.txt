@@ -62,3 +62,4 @@ C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TPFINAL - GRUPO02\l
 C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TPFINAL - GRUPO02\lpoo2-grupo-02\ClasesBase\bin\Debug\ClasesBase.pdb
 C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TPFINAL - GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.dll
 C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TPFINAL - GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.pdb
+C:\Users\fer98\Documents\Visual Studio 2010\Projects\LPOO II\TPFINAL - GRUPO02\lpoo2-grupo-02\ClasesBase\obj\Debug\ClasesBase.csprojResolveAssemblyReference.cache

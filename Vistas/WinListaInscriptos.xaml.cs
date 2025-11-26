@@ -21,102 +21,117 @@ namespace Vistas
     /// </summary>
     public partial class WinListaInscriptos : Window
     {
-
-        private CollectionViewSource vistaColeccionFiltrada; // Variable para mantener la vista de la colección
+        private ICollectionView vistaColeccion;
 
         public WinListaInscriptos()
         {
             InitializeComponent();
-            vistaColeccionFiltrada = Resources["VISTA_INSCRIPTOS"] as CollectionViewSource;
         }
-        private void txtFiltro_TextChanged(object sender, TextChangedEventArgs e)
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            if (vistaColeccionFiltrada != null)
+            ObjectDataProvider odp = (ObjectDataProvider)this.Resources["LIST_INSCRIPTOS"];
+            odp.Refresh();
+
+            // Capturamos la vista correcta del recurso XAML
+            CollectionViewSource cvs = (CollectionViewSource)this.Resources["VISTA_INSCRIPTOS"];
+            vistaColeccion = cvs.View;
+
+            // asigancion del filtro
+            if (vistaColeccion != null)
             {
-                vistaColeccionFiltrada.Filter -= eventVistaUsuario_Filter;
-                vistaColeccionFiltrada.Filter += eventVistaUsuario_Filter;
-                vistaColeccionFiltrada.View.Refresh();
+                vistaColeccion.Filter = FiltroDNI;
             }
         }
 
-
-        private void eventVistaUsuario_Filter(object sender, FilterEventArgs e)
+        private bool FiltroDNI(object item)
         {
-            DataRowView fila = e.Item as DataRowView;
+            if (String.IsNullOrEmpty(txtFiltro.Text)) return true;
 
-            bool aceptado = true;
+            Inscripcion inscripcion = item as Inscripcion;
+            if (inscripcion == null) return false;
 
-            // me sirve para filtrar por DNI del alumno
-            if (!string.IsNullOrWhiteSpace(txtFiltro.Text))
-            {
-                string dni = fila["alu_DNI"].ToString();
-
-                if (!dni.StartsWith(txtFiltro.Text))
-                    aceptado = false;
-            }
-
-            // Me filtra por cursos programados
-            if (cmbCursos.SelectedValue != null)
-            {
-                int cursoID = Convert.ToInt32(cmbCursos.SelectedValue);
-                int cursoFila = Convert.ToInt32(fila["cur_ID"]);
-
-                if (cursoID != cursoFila)
-                    aceptado = false;
-            }
-
-            e.Accepted = aceptado;
+            string dni = inscripcion.Alu_DNI ?? "";
+            return dni.StartsWith(txtFiltro.Text);
         }
 
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void btnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult resultado = MessageBox.Show(
-                "¿Está seguro de que desea regresar al menú principal?",
-                "Exit",
-                MessageBoxButton.YesNo,
-                MessageBoxImage.Question
-            );
-            if (resultado == MessageBoxResult.Yes)
+            if (vistaColeccion != null)
             {
+                // Limpiar filtro: Si está vacía, mostramos todo y salimos
+                if (string.IsNullOrEmpty(txtFiltro.Text))
+                {
+                    vistaColeccion.Refresh();
+                    return;
+                }
 
-                WinPrincipal menu = new WinPrincipal();
-                menu.Show();
+                // Un DNI válido tiene al menos 7 dígitos
+                if (txtFiltro.Text.Length < 7) 
+                {
+                    MessageBox.Show("Por favor, ingrese un DNI válido.", 
+                                    "DNI Incompleto", 
+                                    MessageBoxButton.OK, 
+                                    MessageBoxImage.Warning);
+                    return; // Importante: Cortamos la ejecución aquí para que no busque nada
+                }
+
+                // 3. VALIDACIÓN DE EXISTENCIA (Verificamos si alguien coincide)
+                bool existe = false;
+        
+                foreach (Inscripcion item in vistaColeccion.SourceCollection)
+                {
+                    // Usamos StartsWith para encontrar coincidencias
+                    if (item.Alu_DNI != null && item.Alu_DNI.StartsWith(txtFiltro.Text))
+                    {
+                        existe = true;
+                        break; 
+                    }
+                }
+
+                // APLICAR FILTRO O MOSTRAR AVISO
+                if (existe)
+                {
+                    vistaColeccion.Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró ningún alumno con el DNI: " + txtFiltro.Text, 
+                                    "Sin Resultados", 
+                                    MessageBoxButton.OK, 
+                                    MessageBoxImage.Information);
+                    // No refrescamos la vista para no dejar la tabla vacía
+                }
             }
-            else
-            {
-                //Se cancela el cierre si se elige "No"
-                e.Cancel = true;
-            }
-        }
+}
 
         private void btnAtras_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void btnVistaPrevia_Click(object sender, RoutedEventArgs e)
-        {
-            ICollectionView vistaFiltrada = vistaColeccionFiltrada.View;
-            WinVistaPreviaUsuarios winVistaPrevia = new WinVistaPreviaUsuarios(vistaFiltrada);
-            this.Hide();
-            winVistaPrevia.ShowDialog();
-            this.Show();
-        }
-
-        private void dgInscriptos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
 
-        }
-
-        private void cmbCursos_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (vistaColeccionFiltrada != null)
+            MessageBoxResult resultado = MessageBox.Show(
+               "¿Está seguro de que desea regresar al menú principal?",
+               "Exit",
+               MessageBoxButton.YesNo,
+               MessageBoxImage.Question
+           );
+            if (resultado == MessageBoxResult.Yes)
             {
-                vistaColeccionFiltrada.Filter -= eventVistaUsuario_Filter;
-                vistaColeccionFiltrada.Filter += eventVistaUsuario_Filter;
-                vistaColeccionFiltrada.View.Refresh();
+                WinPrincipal menu = new WinPrincipal();
+                menu.Show();
+            }
+            else
+            {
+                e.Cancel = true;
             }
         }
 
+        private void btnVistaPrevia_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }
